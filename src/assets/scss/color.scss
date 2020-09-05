@@ -1,0 +1,21 @@
+// main colors
+
+$default-blue: #007bff;
+$default-blue-dark: #004a99;
+$default-blue-darker: #00458f;
+$default-blue-darker-hover: #003b7a;
+$default-blue-light: #33a1fd;
+$default-blue-lighter: #bfddfe;
+$default-dark: #253237;
+$default-light: #5c6b73;
+$white: #ffffff;
+
+// Functions
+
+@function transparency($color, $percentage) {
+    @return mix(white, $color, $percentage);
+}
+
+@mixin random-color() {
+    color: rgb(random(255), random(255), random(255));
+}

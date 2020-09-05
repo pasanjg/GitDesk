@@ -1,0 +1,20 @@
+@import "~bootstrap/scss/bootstrap";
+@import "./assets/scss/color";
+
+@font-face {
+    font-family: "SFProDisplay";
+    src: local("SFProDisplay"), url(./assets/fonts/SFProDisplay-Regular.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: "SFProDisplay";
+    font-style: bold;
+    font-weight: 700;
+    src: local("SFProDisplay"), url(./assets/fonts/SFProDisplay-Bold.ttf) format("truetype");
+}
+
+body {
+    font-family: "SFProDisplay";
+    box-shadow: none;
+    outline: none;
+}
