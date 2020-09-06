@@ -1,8 +1,8 @@
 {
-  "name": "electron-react",
-  "productName": "Electron React",
+  "name": "github-desktop",
+  "productName": "GitHub Desktop",
   "version": "0.1.0",
-  "description": "Electron-React App",
+  "description": "An Electron-React App for GitHub",
   "author": {
     "name": "Pasan Godamune"
   },
@@ -29,8 +29,8 @@
     "react-build": "react-scripts build",
     "react-test": "react-scripts test",
     "react-eject": "react-scripts eject",
-    "electron-build": "electron-builder",
-    "release": "yarn react-build && electron-builder --publish=always",
+    "electron-build": "electron-builder --publish=never",
+    "release": "yarn react-build && electron-builder --publish=never",
     "build": "yarn react-build && yarn electron-build",
     "start": "concurrently \"cross-env BROWSER=none yarn react-start\" \"wait-on http://localhost:3000 && electron .\""
   },
@@ -38,7 +38,7 @@
     "publish": {
       "provider": "github"
     },
-    "appId": "com.jayg.electron-react",
+    "appId": "com.jayg.github-desktop",
     "files": [
       "build/**/*",
       "node_modules/**/*"
