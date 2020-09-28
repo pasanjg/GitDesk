@@ -9,10 +9,13 @@ let mainWindow;
 
 
 function createWindow() {
-	mainWindow = new BrowserWindow({
-		minWidth: 1000,
-		minHeight: 800,
-	});
+    mainWindow = new BrowserWindow({
+        minWidth: 1000,
+        minHeight: 800,
+        webPreferences: {
+            nodeIntegration: true
+        }
+    });
     mainWindow.loadURL(isDev ? 'http://localhost:3000' : `file://${path.join(__dirname, '../build/index.html')}`);
     mainWindow.on('closed', () => mainWindow = null);
 }
