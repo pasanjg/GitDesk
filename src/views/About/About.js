@@ -1,15 +1,15 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { Component } from 'react';
 
+import './About.scss';
 
-export default function About() {
-    return (
-        <div>
-            <Link to="/">
-                <i className="fa fa-arrow-left"></i>
-                <span>Go Back</span>
-            </Link>
-            <h1>About Page</h1>
-        </div>
-    )
+export class About extends Component {
+	render() {
+		return (
+			<div>
+				About
+			</div>
+		)
+	}
 }
+
+export default About

@@ -1,5 +1,11 @@
 @import "../../assets/scss/color.scss";
 
-h1 {
-    color: $default-blue-darker !important;
+.row {
+  margin: 0;
+
+  .home-main {
+    flex: 0 0 10%;
+    height: 100vh;
+    margin-left: 80px;
+  }
 }
