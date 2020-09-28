@@ -14,7 +14,7 @@ export class Home extends Component {
 			<Router>
 				<div className="row">
 					<Sidebar />
-					<div className="home-main col-11">
+					<div className="home-main col">
 						<Switch>
 							<Route exact path="/home/dashboard" component={Dashboard} />
 							<Route exact path="/home/repositories" component={Repositories} />

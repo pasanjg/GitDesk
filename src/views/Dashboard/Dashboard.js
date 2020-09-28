@@ -1,101 +1,14 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+
+import './Dashboard.scss'
 
 export class Dashboard extends Component {
 	render() {
 		return (
-			<div>
-				<p>Dashboard</p>
-				<p>Dashboard</p>
-				<p>Dashboard</p>
-				<p>Dashboard</p>
-				<p>Dashboard</p>
-				<p>Dashboard</p>
-				<p>Dashboard</p>
-				<p>Dashboard</p>
-				<p>Dashboard</p>
-				<p>Dashboard</p>
-				<p>Dashboard</p>
-				<p>Dashboard</p>
-				<p>Dashboard</p>
-				<p>Dashboard</p>
-				<p>Dashboard</p>
-				<p>Dashboard</p>
-				<p>Dashboard</p>
-				<p>Dashboard</p>
-				<p>Dashboard</p>
-				<p>Dashboard</p>
-				<p>Dashboard</p>
-				<p>Dashboard</p>
-				<p>Dashboard</p>
-				<p>Dashboard</p>
-				<p>Dashboard</p>
-				<p>Dashboard</p>
-				<p>Dashboard</p>
-				<p>Dashboard</p>
-				<p>Dashboard</p>
-				<p>Dashboard</p>
-				<p>Dashboard</p>
-				<p>Dashboard</p>
-				<p>Dashboard</p>
-				<p>Dashboard</p>
-				<p>Dashboard</p>
-				<p>Dashboard</p>
-				<p>Dashboard</p>
-				<p>Dashboard</p>
-				<p>Dashboard</p>
-				<p>Dashboard</p>
-				<p>Dashboard</p>
-				<p>Dashboard</p>
-				<p>Dashboard</p>
-				<p>Dashboard</p>
-				<p>Dashboard</p>
-				<p>Dashboard</p>
-				<p>Dashboard</p>
-				<p>Dashboard</p>
-				<p>Dashboard</p>
-				<p>Dashboard</p>
-				<p>Dashboard</p>
-				<p>Dashboard</p>
-				<p>Dashboard</p>
-				<p>Dashboard</p>
-				<p>Dashboard</p>
-				<p>Dashboard</p>
-				<p>Dashboard</p>
-				<p>Dashboard</p>
-				<p>Dashboard</p>
-				<p>Dashboard</p>
-				<p>Dashboard</p>
-				<p>Dashboard</p>
-				<p>Dashboard</p>
-				<p>Dashboard</p>
-				<p>Dashboard</p>
-				<p>Dashboard</p>
-				<p>Dashboard</p>
-				<p>Dashboard</p>
-				<p>Dashboard</p>
-				<p>Dashboard</p>
-				<p>Dashboard</p>
-				<p>Dashboard</p>
-				<p>Dashboard</p>
-				<p>Dashboard</p>
-				<p>Dashboard</p>
-				<p>Dashboard</p>
-				<p>Dashboard</p>
-				<p>Dashboard</p>
-				<p>Dashboard</p>
-				<p>Dashboard</p>
-				<p>Dashboard</p>
-				<p>Dashboard</p>
-				<p>Dashboard</p>
-				<p>Dashboard</p>
-				<p>Dashboard</p>
-				<p>Dashboard</p>
-				<p>Dashboard</p>
-				<p>Dashboard</p>
-				<p>Dashboard</p>
-				<p>Dashboard</p>
-				<p>Dashboard</p>
-				<p>Dashboard</p>
+			<div className="dashboard-content">
+				<div className="row">
+					<div className="col">dasdadadsa</div>
+				</div>
 			</div>
 		)
 	}

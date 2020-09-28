@@ -1,9 +1,12 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import ReactTooltip from "react-tooltip";
-import "./Sidebar.scss";
+import packageJson from '../../../package.json';
 
-import githubWhite from "../../assets/images/github-white.svg";
+import "./Sidebar.scss";
+import appLogo from "../../assets/images/appLogo.svg";
+
+const { shell } = window.require('electron');
 
 export class Sidebar extends Component {
 	render() {
@@ -12,7 +15,7 @@ export class Sidebar extends Component {
 				<ul className="navlist">
 					<Link to="/">
 						<li className="logo">
-							<img src={githubWhite} alt="" width="45" />
+							<img src={appLogo} alt="" width="45" />
 						</li>
 					</Link>
 					<Link to="/home/dashboard">
@@ -43,7 +46,7 @@ export class Sidebar extends Component {
 					</Link>
 					<Link to="/home/profile">
 						<li className="item" data-tip="Profile" data-for="profile">
-							<i className="fa fa-user"></i>
+							<i className="fa fa-user-circle"></i>
 						</li>
 						<ReactTooltip
 							id="profile"
@@ -58,6 +61,15 @@ export class Sidebar extends Component {
 						</li>
 						<ReactTooltip id="about" place="right" type="dark" effect="solid" />
 					</Link>
+					<div className="github" data-tip="View on GitHub" data-for="github"
+						onClick={() => {
+							shell.openExternal('https://github.com/pasanjg/GitHub-Desktop')
+						}}
+					>
+						<i className="fab fa-github"></i>
+						<span className="version">v{packageJson.version}</span>
+					</div>
+					<ReactTooltip id="github" place="right" type="dark" effect="solid" />
 				</ul>
 			</nav>
 		);
