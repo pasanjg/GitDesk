@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 import './styles.scss';
-import Home from './views/Home/Home'
+import Home from './views/Home/Home';
 import * as serviceWorker from './serviceWorker';
 import About from './views/About/About';
 import Login from './views/Login/Login';
@@ -11,6 +11,7 @@ const routing = (
 	<Router>
 		<Switch>
 			<Route exact path="/" component={Login} />
+			<Route exact path="/github/callback" component={Home} />
 			<Route path="/about" component={About} />
 			<Route path="/home" component={Home} />
 			<Redirect to="/" />

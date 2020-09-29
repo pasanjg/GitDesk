@@ -4,10 +4,11 @@ import './Dashboard.scss'
 
 export class Dashboard extends Component {
 	render() {
+		console.log(this.props.token);
 		return (
 			<div className="dashboard-content">
 				<div className="row">
-					<div className="col">dasdadadsa</div>
+					<div className="col">{this.props.token}</div>
 				</div>
 			</div>
 		)
