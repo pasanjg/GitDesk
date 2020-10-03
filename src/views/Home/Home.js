@@ -50,13 +50,11 @@ export class Home extends Component {
 				}
 
 			}).then((response) => {
-				console.log('Token: ', response.data.token);
+				console.log('Home', 'Token: ', response.data.token);
 
 				token = response.data.token;
 
-				this.setState({
-					token: token
-				});
+				localStorage.setItem('token', token);
 			});
 		}
 
@@ -70,17 +68,11 @@ export class Home extends Component {
 					<Sidebar />
 					<div className="home-main col">
 						<Switch>
-							<Route exact path="/home/dashboard" render={(props) => (
-								<Dashboard {...props} token={this.state.token} />
-							)} />
-							<Route exact path="/home/repositories" render={(props) => (
-								<Repositories {...props} token={this.state.token} />
-							)} />
-							<Route exact path="/home/profile" render={(props) => (
-								<Profile {...props} token={this.state.token} />
-							)} />
-							<Route exact path="/home/about" component={About} />
-							<Route exact path="/login" component={Login} />
+							<Route path="/home/dashboard" component={Dashboard} />
+							<Route path="/home/repositories" component={Repositories} />
+							<Route path="/home/profile" component={Profile} />
+							<Route path="/home/about" component={About} />
+							<Route path="/" component={Login} />
 							<Redirect to="/home/dashboard" />
 						</Switch>
 					</div>
