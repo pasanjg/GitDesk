@@ -1,59 +1,48 @@
 import gql from 'graphql-tag';
 
-export const FETCH_REPOSITORIES = gql`
+export const FETCH_REPOSITORIES = (field,dir)=> gql`
     {
         viewer {
-            repositories(first: 100) {
+            repositories(first: 100 orderBy:{field: ${field},direction: ${dir}}) {
                 totalCount
                 nodes {
                     nameWithOwner
-#                    homepageUrl
-#                    isPrivate
-#                    isFork
-#                    isArchived
-#                    url
-#                    languages(first:10){
-#                        nodes{
-#                            name
-#                            color
-#                        }
-#                    }
-#
-#
-#                    forks {
-#                        totalCount
-#                    }
-#                    issues {
-#                        totalCount
-#                    }
-#                    collaborators{
-#                        totalCount
-#                    }
-#
-#                    stargazers {
-#                        totalCount
-#                    }
-#                    watchers {
-#                        totalCount
-#                    }
-#                    pullRequests {
-#                        totalCount
-#                    }
-#                    labels(first: 10) {
-#                        edges {
-#                            node {
-#                                name
-#                            }
-#                        }
-#                    }
-#                    milestones(first: 10) {
-#                        edges {
-#                            node {
-#                                title
-#                            }
-#                        }
-#                    }
+                    name
+                    homepageUrl
+                    isPrivate
+                    isFork
+                    isArchived
+                    url
+                    descriptionHTML
+                    languages(first:10){
+                        nodes{
+                            name
+                            color
+                        }
+                    }
+                    forks {
+                        totalCount
+                    }
 
+                    openIssues:issues(states: OPEN) {
+                        totalCount
+                    }
+
+                    issues {
+                        totalCount
+                    }
+                    pullRequests {
+                        totalCount
+                    }
+                    openPullRequest:pullRequests(states: OPEN) {
+                        totalCount
+                    }
+                    stargazers {
+                        totalCount
+                    }
+                    watchers {
+                        totalCount
+                    }
                 }
                 pageInfo {
                     endCursor
