@@ -11,6 +11,7 @@
   "homepage": "./",
   "dependencies": {
     "@apollo/react-hooks": "^4.0.0",
+    "@emotion/core": "^10.0.35",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
@@ -28,6 +29,7 @@
     "react-router-dom": "^5.2.0",
     "react-router-hash-link": "^2.0.0",
     "react-scripts": "3.4.3",
+    "react-spinners": "^0.9.0",
     "react-tooltip": "^4.2.10",
     "use-debounce": "^5.0.1"
   },
