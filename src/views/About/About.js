@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import './About.scss';
 import appLogo from "../../assets/images/appLogo.svg";
 
-const { shell } = window.require('electron');
+// const { shell } = window.require('electron');
 
 export class About extends Component {
 	render() {
@@ -19,7 +19,7 @@ export class About extends Component {
 						GitHub Desktop client <br />
 						Built with React and Electon <br />
 						<code onClick={() => {
-							shell.openExternal('https://github.com/pasanjg/GitHub-Desktop')
+							// shell.openExternal('https://github.com/pasanjg/GitHub-Desktop')
 						}}>View source code on Github</code>
 					</p>
 					<div className="badges">

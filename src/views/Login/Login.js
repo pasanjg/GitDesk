@@ -30,7 +30,7 @@ export class Login extends Component {
 						width="150"
 					/>
 
-					<button className="btn btn-success" onClick={event => { window.location.href = `https://github.com/login/oauth/authorize?client_id=${client_id}`; }}>
+					<button className="btn btn-success" onClick={event => { window.location.href = `https://github.com/login/oauth/authorize?client_id=${client_id}& scope=user%20repo`; }}>
 						Login with GitHub
 					</button>
 
