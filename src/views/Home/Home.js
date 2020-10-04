@@ -10,7 +10,8 @@ import Profile from '../Profile/Profile';
 import Repositories from '../Repositories/Repositories';
 import './Home.scss';
 import Login from '../Login/Login';
-
+import { ApolloProvider } from '@apollo/react-hooks';
+import client from '../../utils/client';
 
 export class Home extends Component {
 
@@ -69,7 +70,9 @@ export class Home extends Component {
 					<div className="home-main col">
 						<Switch>
 							<Route path="/home/dashboard" component={Dashboard} />
-							<Route path="/home/repositories" component={Repositories} />
+							<ApolloProvider client={client}>
+								<Repositories token={localStorage.getItem("token")} />
+							</ApolloProvider>
 							<Route path="/home/profile" component={Profile} />
 							<Route path="/home/about" component={About} />
 							<Route path="/" component={Login} />
