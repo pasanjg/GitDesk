@@ -6,7 +6,7 @@ import packageJson from '../../../package.json';
 import "./Sidebar.scss";
 import appLogo from "../../assets/images/appLogo.svg";
 
-const { shell } = window.require('electron');
+// const { shell } = window.require('electron');
 
 export class Sidebar extends Component {
 	render() {
@@ -61,9 +61,17 @@ export class Sidebar extends Component {
 						</li>
 						<ReactTooltip id="about" place="right" type="dark" effect="solid" />
 					</Link>
+
+					<Link to="/login">
+						<li className="item" data-tip="Login" data-for="login">
+							<button>Login</button>
+						</li>
+						<ReactTooltip id="login" place="right" type="dark" effect="solid" />
+					</Link>
+
 					<div className="github" data-tip="View on GitHub" data-for="github"
 						onClick={() => {
-							shell.openExternal('https://github.com/pasanjg/GitHub-Desktop')
+							// shell.openExternal('https://github.com/pasanjg/GitHub-Desktop')
 						}}
 					>
 						<i className="fab fa-github"></i>
