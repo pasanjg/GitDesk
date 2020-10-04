@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import ReactTooltip from "react-tooltip";
+import { clearLocalStorage } from '../../utils/Util';
 import packageJson from '../../../package.json';
 
 import "./Sidebar.scss";
@@ -9,6 +10,13 @@ import appLogo from "../../assets/images/appLogo.svg";
 // const { shell } = window.require('electron');
 
 export class Sidebar extends Component {
+
+	logout = (e) => {
+		e.preventDefault()
+		clearLocalStorage()
+		window.location.href = "/";
+	}
+
 	render() {
 		return (
 			<nav className="sidebar">
@@ -62,12 +70,12 @@ export class Sidebar extends Component {
 						<ReactTooltip id="about" place="right" type="dark" effect="solid" />
 					</Link>
 
-					<Link to="/login">
+
 						<li className="item" data-tip="Login" data-for="login">
-							<button>Login</button>
+						<button onClick={this.logout}>Logout</button>
 						</li>
 						<ReactTooltip id="login" place="right" type="dark" effect="solid" />
-					</Link>
+
 
 					<div className="github" data-tip="View on GitHub" data-for="github"
 						onClick={() => {

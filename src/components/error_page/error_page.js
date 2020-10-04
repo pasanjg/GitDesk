@@ -5,6 +5,7 @@ const ErrorPage = (error)=>{
     return  <div id="error-content">
         <div className="content">
             Something went wrong
+            <p>{error}</p>
         </div>
     </div>
 }

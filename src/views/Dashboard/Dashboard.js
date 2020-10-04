@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 
 import './Dashboard.scss';
+import { getLocalStorage } from '../../utils/Util';
 
 export class Dashboard extends Component {
 
@@ -10,7 +11,7 @@ export class Dashboard extends Component {
 
 		this.state = {
 			loading: false,
-			token: localStorage.getItem('token'),
+			token: getLocalStorage('token'),
 			response: ''
 		}
 
@@ -23,7 +24,7 @@ export class Dashboard extends Component {
 
 	async graphAPI() {
 
-		if (this.state.token === '' || this.state.response === '') {
+		if (this.state.token === '') {
 			this.setState({
 				loading: true
 			});
