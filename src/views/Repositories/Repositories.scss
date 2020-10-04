@@ -1,0 +1,33 @@
+@import "../../assets/scss/color.scss";
+
+.repository-content{
+  color: $white;
+  background-color: $default-black-dark;  position: relative;
+  top:0;
+  bottom: auto;
+  min-height: 100%;
+  left: 0;
+}
+$card-background : #1a1a1a;
+$pill-background : #1a1a1a;
+$card-header-background : #292929;
+.repository-card{
+  background-color: $card-background !important;
+}
+
+.repository-card-header{
+  background-color: $card-header-background !important;
+}
+.repository-pill{
+  background-color: $pill-background;
+}
+.card-icon{
+  display: flex;
+  justify-content: flex-end;
+}
+.repository-card-body{
+
+}
+.repository-card-footer{
+
+}
