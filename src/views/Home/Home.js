@@ -55,10 +55,9 @@ export class Home extends Component {
 
 			}).then((response) => {
 				console.log('Home', 'Token: ', response.data.token);
-
 				token = response.data.token;
-
 				setLocalStorage('token', token);
+				window.location.href = '/home/dashboard';
 			});
 		}
 
