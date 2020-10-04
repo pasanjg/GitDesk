@@ -1,18 +1,21 @@
 import ApolloClient from 'apollo-boost';
+import { getLocalStorage } from './Util';
+
+console.log(getLocalStorage('token'));
 
 const client = new ApolloClient({
     uri: 'https://api.github.com/graphql',
     fetchOptions: {
         "x-accepted-oauth-scopes": "repo",
         "x-github-media-type": "github.v4",
-        "x-oauth-scopes": "repo, user",
+        "x-oauth-scopes": "repo, user, read:org",
         "x-ratelimit-limit": "5000",
         "x-ratelimit-reset": "1601794371",
         "x-ratelimit-used": "1"
     },
 
     headers: {
-        Authorization: `bearer ${localStorage.getItem('token')}`,
+        Authorization: `bearer ${getLocalStorage('token')}`,
     },
 });
 
