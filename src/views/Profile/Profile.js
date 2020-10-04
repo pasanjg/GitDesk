@@ -9,10 +9,15 @@ export class Profile extends Component {
 		super(props);
 
 		this.state = {
+			loading: false,
+			token: localStorage.getItem('token'),
 			name: '',
 			username: '',
-			avatar_url: ''
+			email: '',
+			avatarUrl: '' 
 		}
+
+		this.getUser = this.getUser.bind(this);
 	}
 
 	componentDidMount() {
@@ -20,25 +25,31 @@ export class Profile extends Component {
 	}
 
 	async getUser() {
-		const { token } = this.props;
+
+		if (this.state.token === '' || this.state.response === '') {
+			this.setState({
+				loading: true
+			});
+		}
+
+		var query = `query { viewer { login, name, email, avatarUrl }}`;
 
 		await axios({
-			method: 'get',
-			url: `https://api.github.com/user`,
+			method: 'post',
+			url: 'https://api.github.com/graphql',
 			headers: {
-				Authorization: 'token ' + token
-			}
-
+				'Authorization': `Bearer ${this.state.token}`,
+				'Content-Type': 'application/json'
+			},
+			data: JSON.stringify({ query: query })
 		}).then((response) => {
-			console.log('Response: ', response);
 			this.setState({
-				name: response.data.name,
-				username: response.data.login,
-				avatar_url: response.data.avatar_url
+				username: response.data.data.viewer.login,
+				name: response.data.data.viewer.name,
+				avatarUrl: response.data.data.viewer.avatarUrl,
+				loading: false
 			});
-			console.log(this.state.username);
-			console.log(this.state.avatar_url);
-		})
+		});
 	}
 
 	render() {
@@ -46,7 +57,7 @@ export class Profile extends Component {
 			<div>
 				<p>{this.state.name}</p>
 				<p>{this.state.username}</p>
-				<img src={this.state.avatar_url} alt="" width="200" />
+				<img src={this.state.avatarUrl} alt="" width="200" />
 			</div>
 		);
 	}

@@ -10,8 +10,7 @@ import Profile from '../Profile/Profile';
 import Repositories from '../Repositories/Repositories';
 import './Home.scss';
 import Login from '../Login/Login';
-import { ApolloProvider } from '@apollo/react-hooks';
-import client from '../../utils/client';
+
 
 export class Home extends Component {
 
@@ -54,7 +53,7 @@ export class Home extends Component {
 				console.log('Token: ', response.data.token);
 
 				token = response.data.token;
-				localStorage.setItem("token",token);
+
 				this.setState({
 					token: token
 				});
@@ -74,12 +73,9 @@ export class Home extends Component {
 							<Route exact path="/home/dashboard" render={(props) => (
 								<Dashboard {...props} token={this.state.token} />
 							)} />
-							<ApolloProvider client={client}>
 							<Route exact path="/home/repositories" render={(props) => (
-								<Repositories {...props}  token={localStorage.getItem("token")} />
-								// <Repositories {...props} token={this.state.token} />
+								<Repositories {...props} token={this.state.token} />
 							)} />
-							</ApolloProvider>
 							<Route exact path="/home/profile" render={(props) => (
 								<Profile {...props} token={this.state.token} />
 							)} />

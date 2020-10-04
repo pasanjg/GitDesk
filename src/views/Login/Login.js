@@ -26,11 +26,14 @@ export class Login extends Component {
 				<div className="main">
 					<img
 						src="https://image.flaticon.com/icons/png/512/25/25231.png"
-						alt=""
+						alt="logo"
 						width="150"
 					/>
 
-					<button className="btn btn-success" onClick={event => { window.location.href = `https://github.com/login/oauth/authorize?client_id=${client_id}& scope=user%20repo`; }}>
+					<button className="btn btn-success"
+						onClick={e => {
+							window.location.href = `https://github.com/login/oauth/authorize?client_id=${client_id}&scope=user%20repo`;
+						}}>
 						Login with GitHub
 					</button>
 
