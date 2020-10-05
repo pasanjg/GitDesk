@@ -49,12 +49,11 @@ export class Dashboard extends Component {
 	}
 
 	render() {
-		console.log(this.state.token);
 		return (
 			<div className="dashboard-content">
 				{
 					this.state.loading ? <p>Loading...</p> :
-						<div className="row">
+						<div className="row m-0">
 							<div className="col">{this.state.token}</div>
 							<div className="col">Res: {this.state.response}</div>
 						</div>

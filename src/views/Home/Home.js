@@ -54,7 +54,6 @@ export class Home extends Component {
 				}
 
 			}).then((response) => {
-				console.log('Home', 'Token: ', response.data.token);
 				token = response.data.token;
 				setLocalStorage('token', token);
 				window.location.href = '/home/dashboard';
@@ -67,19 +66,17 @@ export class Home extends Component {
 	render() {
 		return (
 			<Router>
-				<div className="row">
-					<Sidebar />
-					<div className="home-main col">
-						<Switch>
-							<ApolloProvider client={client}>
-								<Route path="/home/dashboard" component={Dashboard} />
-								<Route path="/home/repositories" component={Repositories} />
-								<Route path="/home/profile" component={Profile} />
-								<Route path="/home/about" component={About} />
-								<Redirect to="/home/dashboard" />
-							</ApolloProvider>
-						</Switch> 
-					</div>
+				<Sidebar />
+				<div className="main-content">
+					<Switch>
+						<ApolloProvider client={client}>
+							<Route path="/home/dashboard" component={Dashboard} />
+							<Route path="/home/repositories" component={Repositories} />
+							<Route path="/home/profile" component={Profile} />
+							<Route path="/home/about" component={About} />
+							<Redirect to="/home/dashboard" />
+						</ApolloProvider>
+					</Switch>
 				</div>
 			</Router>
 		)

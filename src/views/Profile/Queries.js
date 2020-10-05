@@ -8,31 +8,44 @@ export const FETCH_USER = gql`
     bio
     url
     avatarUrl
-    resourcePath
+    createdAt
     followers {
       totalCount
     }
-    following (first: 100) {
+    following(first: 100) {
       totalCount
-    }
-    repositories(first: 10, orderBy: {field: PUSHED_AT, direction: DESC}) {
-      totalCount
-      
     }
     starredRepositories {
       totalCount
     }
-    company
-    websiteUrl
-    location
-    isDeveloperProgramMember
-    organizations(first: 100) {
-      edges {
-        node {
-          name
+    topRepositories(first: 6, orderBy: {field: STARGAZERS, direction: DESC}) {
+      nodes {
+        name
+        isPrivate
+        url
+        nameWithOwner
+        languages(first: 5) {
+          nodes {
+            name
+            color
+          }
+        }
+        stargazers {
+          totalCount
+        }
+        description
+        updatedAt
+        collaborators {
+          totalCount
+          nodes {
+            login
+            avatarUrl
+          }
         }
       }
     }
+    company
+    location
   }
 }
 `

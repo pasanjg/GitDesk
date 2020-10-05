@@ -1,43 +1,42 @@
 import React, { Component } from "react";
+import githubLogo from '../../assets/images/githubLogo.svg';
+import { getLocalStorage } from "../../utils/Util";
 import "./Login.scss";
 
 export class Login extends Component {
 
-	constructor(props) {
-		super(props);
-		this.state = {
-			isAuthenticated: false,
-			code: "",
-			loading: false,
-			access_token: "",
-			username: ""
+	constructor() {
+		super();
+		this.checkAuthentication.bind(this);
+	}
+
+	componentDidMount() {
+		this.checkAuthentication();
+	}
+
+	checkAuthentication() {
+		var token = getLocalStorage('token');
+
+		if (token !== null) {
+			console.log('Authorized');
+			window.location.href = "/home/dashboard"
 		}
 	}
 
-	async componentDidMount() {
-
-	}
-
 	render() {
-		const client_id = 'deb1fe3d3ce3b6964133';
+		const CLIENT_ID = 'deb1fe3d3ce3b6964133';
 
 		return (
 			<div id="login-content">
 				<div className="main">
-					<img
-						src="https://image.flaticon.com/icons/png/512/25/25231.png"
-						alt="logo"
-						width="150"
-					/>
+					<img src={githubLogo} alt="logo" width="150" />
 
-					<button className="btn btn-success"
+					<button className="btn login-btn"
 						onClick={e => {
-							window.location.href = `https://github.com/login/oauth/authorize?client_id=${client_id}&scope=user%20repo%20read:org`;
+							window.location.href = `https://github.com/login/oauth/authorize?client_id=${CLIENT_ID}&scope=user%20repo%20read:org`;
 						}}>
 						Login with GitHub
 					</button>
-
-					{this.state.username}
 				</div>
 			</div>
 		);

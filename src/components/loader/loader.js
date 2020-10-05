@@ -3,7 +3,7 @@ import { css } from "@emotion/core";
 import AppLoader from "react-spinners/RingLoader";
 import './loader.scss';
 
-const loaderColor = "#64ffda";
+const loaderColor = "#FFFFFF";
 const override = css`
   display: block;
   margin: 2 auto;
