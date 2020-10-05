@@ -1,8 +1,6 @@
 import ApolloClient from 'apollo-boost';
 import { getLocalStorage } from './Util';
 
-console.log(getLocalStorage('token'));
-
 const client = new ApolloClient({
     uri: 'https://api.github.com/graphql',
     fetchOptions: {

@@ -44,11 +44,11 @@ const Repositories = ({token}) => {
         return <div className="repository-content content-padding">
             {/*<input onChange={event => setKeyword(event.target.value)}/>*/}
             Repositories ({totalCount})
-            <div className="row">
-                <div className="col-12 col-md-2">
+            <div className="row m-0">
+                <div className="col-12 col-md-3">
                     <Dropdown options={dropDownOptions} onChange={select => setDropdownOption(select)} value={selectedOption.label} placeholder="Select an option" />
                 </div>
-                <div className="col-12 col-md-2 mt-2 mt-md-0">
+                <div className="col-12 col-md-3 mt-2 mt-md-0">
                     <Dropdown options={dropDownDirection} onChange={select => setDirection(select)} value={selectedDirection.label} placeholder="Select an Direction" />
                 </div>
             </div>

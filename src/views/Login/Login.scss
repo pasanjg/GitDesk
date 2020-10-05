@@ -4,6 +4,7 @@
 	display: grid;
 	height: 100vh;
 	place-items: center;
+	background-color: $default-black-dark;
 
 	.main {
 		height: 400px;
@@ -12,7 +13,23 @@
 		flex-direction: column;
 		align-items: center;
 		justify-content: space-around;
-		border: 1px solid rgb(206, 206, 206);
+		border: 1px solid $default-black;
 		border-radius: 10px;
+		background-color: $default-black;
+		transition: all 0.2s;
+
+		&:hover{
+			background-color: $default-black-light;
+		}
+
+		.login-btn{
+			color: $white;
+			background-color: $default-light-green;
+			transition: all 0.2s;
+
+			&:hover{
+				background-color: $default-dark-green;
+			}
+		}
 	}
 }
