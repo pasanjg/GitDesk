@@ -73,11 +73,11 @@ const Profile = () => {
 													{
 														repo.collaborators.nodes.map((collaborator, index) => {
 															return (
-																<>
-																	<img key={index} className="collaborator-img" src={collaborator.avatarUrl} alt="avatar" data-tip={collaborator.name} data-for="collaborator" />
+																<div key={index} className="d-inline">
+																	<img className="collaborator-img" src={collaborator.avatarUrl} alt="avatar" data-tip={collaborator.name} data-for="collaborator" />
 																	<ReactTooltip id="collaborator" place="right" type="dark" effect="solid"
 																	/>
-																</>
+																</div>
 															);
 														})
 													}
