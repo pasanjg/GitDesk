@@ -1,4 +1,4 @@
-<img src="https://miro.medium.com/max/3000/1*jrPO3qBkDhFmj5SGkcGP3Q.jpeg" width="100%" />
+<img src="https://i.morioh.com/2019/11/15/2d0baf6e8708.jpg" width="100%" />
 
 <div align="center">
 
@@ -6,6 +6,13 @@
 [![Github Tag][github-tag-image]][github-tag-url]
 
 </div>
+<br/>
+
+GitHub Client application built with React using the GitHub [GraphQL API](https://docs.github.com/en/free-pro-team@latest/graphql)
+
+NodeJS App in `server/` is deployed to [Heroku](http://oauth-gh.herokuapp.com/)
+
+Authorizarion Token wil be retreived from there `/authenticate/:code`
 
 ## Install
 
@@ -25,11 +32,23 @@ npm start
 
 ## Build Release
 
-To package apps for the local platform:
+To package app for web:
 
 ```bash
 npm run build
 ```
+
+## Screenshots
+
+- ##### Login
+![](internal/images/login.PNG)
+- ##### Dashboard
+![](internal/images/dashboard.PNG)
+- ##### Repositories
+![](internal/images/repositories.PNG)
+- ##### Profile
+![](internal/images/profile.PNG)
+
 
 ## License
 
