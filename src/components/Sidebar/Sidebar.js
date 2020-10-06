@@ -78,14 +78,18 @@ export class Sidebar extends Component {
 						<ReactTooltip id="logout" place="right" type="dark" effect="solid" />
 
 
+
 						<div className="github" data-tip="View on GitHub" data-for="github"
 							onClick={() => {
 								// shell.openExternal('https://github.com/pasanjg/GitHub-Desktop')
 							}}
 						>
-							<i className="fab fa-github"></i>
+							<a href="https://github.com/pasanjg/GitHub-Desktop" target="_blank" rel="noopener noreferrer">
+								<i className="fab fa-github"></i>
+							</a>
 							<span className="version">v{packageJson.version}</span>
 						</div>
+
 						<ReactTooltip id="github" place="right" type="dark" effect="solid" />
 					</ul>
 				</nav>

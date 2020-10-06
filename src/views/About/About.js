@@ -17,13 +17,15 @@ export class About extends Component {
 					/>
 					<p className="mt-4">
 						GitHub Desktop client <br />
-						Built with React and Electon <br />
-						<code onClick={() => {
-							// shell.openExternal('https://github.com/pasanjg/GitHub-Desktop')
-						}}>View source code on Github</code>
+						Built with React <br />
+						<a href="https://github.com/pasanjg/GitHub-Desktop" target="_blank" rel="noopener noreferrer">
+							<code onClick={() => {
+								// shell.openExternal('https://github.com/pasanjg/GitHub-Desktop')
+							}}>View source code on Github</code>
+						</a>
 					</p>
 					<div className="badges">
-						{/* <img src="https://github.com/pasanjg/GitHub-Desktop/workflows/CI/badge.svg" alt="actions" /> */}
+						<img src="https://github.com/pasanjg/GitHub-Desktop/workflows/CI/badge.svg" alt="actions" />
 						<img src="https://img.shields.io/github/tag/pasanjg/GitHub-Desktop.svg?label=version" alt="version" />
 					</div>
 					<div className="react mt-2">
@@ -36,4 +38,4 @@ export class About extends Component {
 	}
 }
 
-export default About
+export default About;

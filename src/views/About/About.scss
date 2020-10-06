@@ -8,6 +8,11 @@
     color: $white;
     background-color: $default-black-dark;
 
+    a{
+        text-decoration: none;
+        color: #e000a8;
+    }
+
     .main {
         margin: auto;
         height: 400px;
