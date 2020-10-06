@@ -23,7 +23,7 @@ export class About extends Component {
 						}}>View source code on Github</code>
 					</p>
 					<div className="badges">
-						<img src="https://github.com/pasanjg/GitHub-Desktop/workflows/CI/badge.svg" alt="actions" />
+						{/* <img src="https://github.com/pasanjg/GitHub-Desktop/workflows/CI/badge.svg" alt="actions" /> */}
 						<img src="https://img.shields.io/github/tag/pasanjg/GitHub-Desktop.svg?label=version" alt="version" />
 					</div>
 					<div className="react mt-2">

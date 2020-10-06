@@ -1,8 +1,118 @@
 @import "../../assets/scss/color.scss";
 
-.dashboard-content{
+.dashboard-content {
+    min-height: 100vh;
     margin-left: 70px;
-    height: 100vh;
+    padding: 30px;
     color: $white;
     background-color: $default-black-dark;
+
+    hr {
+        margin: 5px 0 15px;
+        border-color: transparency($default-black, 8);
+    }
+
+    a {
+        color: $default-gray;
+    }
+
+    .dash-card {
+        margin: 10px 0;
+        padding: 15px 25px;
+        border: 1px;
+        border-radius: 8px;
+        background-color: $default-black;
+        transition: all 0.5s;
+
+        .stats {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+
+            label {
+                font-size: 18px;
+                margin: 0;
+            }
+
+            span {
+                font-size: 50px;
+                font-weight: bold;
+            }
+        }
+
+        &:hover {
+            background-color: $default-black-light;
+        }
+    }
+
+    .statistics {
+        margin-top: 25px;
+
+        .stat-card {
+            margin: 20px 0;
+            padding: 15px 25px;
+            border: 1px;
+            border-radius: 8px;
+            background-color: $default-black;
+            transition: all 0.5s;
+
+            p {
+                font-size: 20px;
+                font-weight: bold;
+            }
+
+            .details {
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: 10px;
+
+                .state {
+                    color: $default-light;
+                    font-size: 15px;
+                    padding: 3px 10px;
+                    margin-right: 5px;
+                    border-radius: 5px;
+                }
+
+                .open{
+                    background-color: $open;
+                }
+
+                .closed{
+                    background-color: $closed;
+                }
+
+                .merged{
+                    background-color: $merged;
+                }
+
+                .number {
+                    font-size: 25px;
+                    font-weight: bold;
+                    color: $default-gray;
+                }
+
+                .name {
+                    font-size: 18px;
+                    font-weight: bold;
+                    color: $default-gray;
+                }
+
+                .fa {
+                    color: $default-gray !important;
+                }
+
+                .participant-img {
+                    width: 20px;
+                    height: 20px;
+                    border-radius: 100%;
+                    margin-right: 5px;
+                }
+            }
+
+            &:hover {
+                background-color: $default-black-light;
+            }
+        }
+    }
 }
