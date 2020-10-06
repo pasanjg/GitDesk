@@ -19,16 +19,11 @@ export class Home extends Component {
 	constructor(props) {
 		super(props);
 
-		this.state = {
-			token: '',
-			username: ''
-		}
-
 		this.getToken.bind(this);
 	}
 
-	componentDidMount() {
-		this.getToken()
+	async componentDidMount() {
+		await this.getToken()
 	}
 
 

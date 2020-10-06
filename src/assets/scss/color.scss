@@ -10,6 +10,10 @@ $default-gray: #bdbdbd;
 $default-light: #edf5fc;
 $white: #ffffff;
 
+$open: #28a745;
+$closed: #d73a49;
+$merged: #6f42c1;
+
 // Functions
 
 @function transparency($color, $percentage) {

@@ -18,17 +18,17 @@
 		background-color: $default-black;
 		transition: all 0.2s;
 
-		&:hover{
+		&:hover {
 			background-color: $default-black-light;
 		}
 
-		.login-btn{
+		.login-btn {
 			color: $white;
-			background-color: $default-light-green;
+			background-color: $default-dark-green;
 			transition: all 0.2s;
 
-			&:hover{
-				background-color: $default-dark-green;
+			&:hover {
+				background-color: $default-light-green;
 			}
 		}
 	}

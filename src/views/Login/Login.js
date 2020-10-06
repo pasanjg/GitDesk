@@ -30,7 +30,7 @@ export class Login extends Component {
 			<div id="login-content">
 				<div className="main">
 					<img src={githubLogo} alt="logo" width="150" />
-
+					<code className="text-center">Just Login. We'll callback you. <br /> It's a promise!</code>
 					<button className="btn login-btn"
 						onClick={e => {
 							window.location.href = `https://github.com/login/oauth/authorize?client_id=${CLIENT_ID}&scope=user%20repo%20read:org`;
