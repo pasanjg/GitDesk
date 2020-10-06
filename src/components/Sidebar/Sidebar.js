@@ -22,7 +22,7 @@ export class Sidebar extends Component {
 			<div>
 				<nav className="sidebar">
 					<ul className="navlist">
-						<Link to="/">
+						<Link to="/home/dashboard">
 							<li className="logo">
 								<img src={appLogo} alt="" width="45" />
 							</li>

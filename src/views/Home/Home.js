@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Route, BrowserRouter as Router, Switch, Redirect } from 'react-router-dom';
 import queryString from 'query-string';
 import axios from 'axios';
-import { setLocalStorage } from '../../utils/Util';
+import { getLocalStorage, setLocalStorage } from '../../utils/Util';
 
 import Sidebar from '../../components/Sidebar/Sidebar';
 import About from '../About/About';
@@ -13,6 +13,7 @@ import './Home.scss';
 
 import { ApolloProvider } from '@apollo/react-hooks';
 import client from '../../utils/client';
+import Login from '../Login/Login';
 
 export class Home extends Component {
 
@@ -59,20 +60,27 @@ export class Home extends Component {
 	}
 
 	render() {
+		const token = getLocalStorage('token');
 		return (
 			<Router>
-				<Sidebar />
-				<div className="main-content">
-					<Switch>
-						<ApolloProvider client={client}>
-							<Route path="/home/dashboard" component={Dashboard} />
-							<Route path="/home/repositories" component={Repositories} />
-							<Route path="/home/profile" component={Profile} />
-							<Route path="/home/about" component={About} />
-							<Redirect to="/home/dashboard" />
-						</ApolloProvider>
-					</Switch>
-				</div>
+				{
+					token ? (
+						<>
+							<Sidebar />
+							<div className="main-content">
+								<Switch>
+									<ApolloProvider client={client}>
+										<Route path="/home/dashboard" component={Dashboard} />
+										<Route path="/home/repositories" component={Repositories} />
+										<Route path="/home/profile" component={Profile} />
+										<Route path="/home/about" component={About} />
+										<Redirect to="/home/dashboard" />
+									</ApolloProvider>
+								</Switch>
+							</div>
+						</>
+					) : <Login />
+				}
 			</Router>
 		)
 	}
