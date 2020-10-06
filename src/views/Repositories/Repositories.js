@@ -8,7 +8,6 @@ import ErrorPage from "../../components/error_page/error_page";
 import parse from 'html-react-parser';
 import ReactTooltip from "react-tooltip";
 import Dropdown from 'react-dropdown';
-import 'react-dropdown/style.css';
 
 const Repositories = ({token}) => {
 
@@ -43,8 +42,10 @@ const Repositories = ({token}) => {
         console.log(repositories);
         return <div className="repository-content content-padding">
             {/*<input onChange={event => setKeyword(event.target.value)}/>*/}
-            Repositories ({totalCount})
             <div className="row m-0">
+                <div className="col-12 col-md-6 align-items-center justify-content-center mt-2">
+                    Repositories ({totalCount})
+                </div>
                 <div className="col-12 col-md-3">
                     <Dropdown options={dropDownOptions} onChange={select => setDropdownOption(select)} value={selectedOption.label} placeholder="Select an option" />
                 </div>
