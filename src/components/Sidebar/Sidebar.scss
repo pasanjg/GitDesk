@@ -1,0 +1,66 @@
+@import "../../assets/scss/color.scss";
+
+.sidebar {
+	height: 100%;
+  width: 70px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
+	background-color: $default-black;
+
+	.navlist {
+		list-style: none;
+		padding: 0;
+		text-align: center;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+
+		.logo {
+			margin-top: 20px;
+			margin-bottom: 50px;
+		}
+
+		.item {
+			margin: 20px 0;
+			font-size: 22px;
+			color: $default-gray;
+			transition: 0.8 all;
+
+			&:hover {
+				color: white;
+			}
+		}
+
+		.github {
+			width: auto;
+			height: 40px;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			align-items: center;
+			position: absolute;
+			text-align: center;
+			font-size: 20px;
+			color: $default-gray;
+			bottom: 20px;
+
+			a{
+				color: $default-gray;
+			}
+
+			.version{
+				font-size: 10px;
+				color: gray;
+			}
+
+			&:hover {
+				color: white;
+			}
+		}
+	}
+}

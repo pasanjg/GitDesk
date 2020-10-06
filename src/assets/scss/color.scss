@@ -1,21 +1,25 @@
 // main colors
 
-$default-blue: #007bff;
-$default-blue-dark: #004a99;
-$default-blue-darker: #00458f;
-$default-blue-darker-hover: #003b7a;
-$default-blue-light: #33a1fd;
-$default-blue-lighter: #bfddfe;
-$default-dark: #253237;
-$default-light: #5c6b73;
+$default-black: #2b2b2b;
+$default-black-light: #313131;
+$default-black-dark: #242424;
+$default-blue: #006CBE;
+$default-light-green: #40c463;
+$default-dark-green: #30a14e;
+$default-gray: #bdbdbd;
+$default-light: #edf5fc;
 $white: #ffffff;
+
+$open: #28a745;
+$closed: #d73a49;
+$merged: #6f42c1;
 
 // Functions
 
 @function transparency($color, $percentage) {
-    @return mix(white, $color, $percentage);
+	@return mix(white, $color, $percentage);
 }
 
 @mixin random-color() {
-    color: rgb(random(255), random(255), random(255));
+	color: rgb(random(255), random(255), random(255));
 }

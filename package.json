@@ -2,37 +2,45 @@
   "name": "github-desktop",
   "productName": "GitHub Desktop",
   "version": "0.1.0",
-  "description": "An Electron-React App for GitHub",
+  "description": "An React App for GitHub",
   "author": {
     "name": "Pasan Godamune"
   },
   "private": true,
-  "main": "public/electron.js",
   "homepage": "./",
   "dependencies": {
+    "@apollo/react-hooks": "^4.0.0",
+    "@emotion/core": "^10.0.35",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
+    "apollo-boost": "^0.4.9",
+    "axios": "^0.20.0",
     "bootstrap": "^4.5.2",
+    "crypto-js": "^4.0.0",
     "electron-is-dev": "^1.2.0",
+    "graphql": "^15.3.0",
+    "html-react-parser": "^0.14.0",
     "jquery": "^3.5.1",
+    "moment": "^2.29.0",
     "node-sass": "^4.14.1",
     "popper.js": "^1.16.1",
+    "query-string": "^6.13.4",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-dropdown": "^1.9.0",
     "react-router-dom": "^5.2.0",
     "react-router-hash-link": "^2.0.0",
-    "react-scripts": "3.4.3"
+    "react-scripts": "3.4.3",
+    "react-spinners": "^0.9.0",
+    "react-tooltip": "^4.2.10",
+    "use-debounce": "^5.0.1"
   },
   "scripts": {
-    "react-start": "react-scripts start",
-    "react-build": "react-scripts build",
-    "react-test": "react-scripts test",
-    "react-eject": "react-scripts eject",
-    "electron-build": "electron-builder --publish=never",
-    "release": "yarn react-build && electron-builder --publish=never",
-    "build": "yarn react-build && yarn electron-build",
-    "start": "concurrently \"cross-env BROWSER=none yarn react-start\" \"wait-on http://localhost:3000 && electron .\""
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
   },
   "build": {
     "publish": {

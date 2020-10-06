@@ -22,3 +22,17 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# IntelliJ project files
+*.iml
+*.iws
+*.ipr
+.idea/
+
+#vs code
+.vscode
+
+
+# OS
+.DS_Store
+
