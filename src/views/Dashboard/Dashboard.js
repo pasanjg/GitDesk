@@ -113,7 +113,7 @@ export default function Dashboard() {
 								<p>Last 10 Pull Requests</p>
 								<hr />
 								{
-									pullRequests.totalCount === 0 ? <span><i className="text-muted">No Issues</i></span> :
+									pullRequests.totalCount === 0 ? <span><i className="text-muted">No Pull Requests</i></span> :
 										pullRequests.nodes.map((request, index) => {
 											return (
 												<div key={index}>
