@@ -1,7 +1,6 @@
-import React, {useState} from "react";
-// import {useDebounce} from "use-debounce";
+import React, { useState } from "react";
 import {useQuery} from "@apollo/react-hooks";
-import {FETCH_REPOSITORIES} from "./queries"
+import { FETCH_REPOSITORIES } from "./Queries"
 import "./Repositories.scss";
 import Loader from "../../components/loader/loader";
 import ErrorPage from "../../components/error_page/error_page";
@@ -39,12 +38,11 @@ const Repositories = ({token}) => {
     else {
         const repositories = data.viewer.repositories;
         const totalCount = repositories.totalCount;
-        console.log(repositories);
+
         return <div className="repository-content content-padding">
-            {/*<input onChange={event => setKeyword(event.target.value)}/>*/}
             <div className="row m-0">
                 <div className="col-12 col-md-6 align-items-center justify-content-center mt-2">
-                    Repositories ({totalCount})
+                    <p className="title">Repositories ({totalCount})</p>
                 </div>
                 <div className="col-12 col-md-3">
                     <Dropdown options={dropDownOptions} onChange={select => setDropdownOption(select)} value={selectedOption.label} placeholder="Select an option" />

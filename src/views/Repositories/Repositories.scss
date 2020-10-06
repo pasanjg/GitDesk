@@ -9,6 +9,11 @@
   min-height: 100%;
   left: 0;
 
+  .title{
+    font-size: 25px;
+    font-weight: bold;
+  }
+
   .Dropdown-control {
     width: 200px;
   }
@@ -32,14 +37,6 @@ $card-header-background : $default-black-light;
   justify-content: flex-end;
 }
 
-// .repository-card-body{
-
-// }
-// .repository-card-footer{
-
-// }
-
-
 .Dropdown-root {
   position: relative;
 }
@@ -48,7 +45,7 @@ $card-header-background : $default-black-light;
   position: relative;
   overflow: hidden;
   background-color: $card-background;
-  border: 1px solid #ccc;
+  border: 1px solid $default-black-light;
   border-radius: 2px;
   box-sizing: border-box;
   color: $default-light;
@@ -83,7 +80,7 @@ $card-header-background : $default-black-light;
 
 .Dropdown-menu {
   background-color: $default-black-light;
-  border: 1px solid #ccc;
+  border: 1px solid $default-black-dark;
   box-shadow: 0 1px 0 rgba(0, 0, 0, 0.06);
   box-sizing: border-box;
   margin-top: -1px;
