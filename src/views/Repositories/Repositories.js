@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import {useQuery} from "@apollo/react-hooks";
-import { FETCH_REPOSITORIES } from "./Queries"
-import "./Repositories.scss";
-import Loader from "../../components/loader/loader";
-import ErrorPage from "../../components/error_page/error_page";
 import parse from 'html-react-parser';
 import ReactTooltip from "react-tooltip";
 import Dropdown from 'react-dropdown';
+import { FETCH_REPOSITORIES } from "./Queries.js"
+
+import "./Repositories.scss";
+import Loader from "../../components/loader/loader";
+import ErrorPage from "../../components/error_page/error_page";
 
 const Repositories = ({token}) => {
 
