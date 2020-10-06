@@ -51,6 +51,7 @@ export class Home extends Component {
 
 			}).then((response) => {
 				token = response.data.token;
+				console.log(token);
 				setLocalStorage('token', token);
 				window.location.href = '/home/dashboard';
 			});
@@ -61,6 +62,7 @@ export class Home extends Component {
 
 	render() {
 		const token = getLocalStorage('token');
+		console.log(token);
 		return (
 			<Router>
 				{
