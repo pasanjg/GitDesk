@@ -6,10 +6,11 @@
   place-items: center;
   background-color: $default-black-dark;
 
-  .sweet-loader {
+  .octocat-spinner {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
+    opacity: 70%;
   }
 }

@@ -1,26 +1,14 @@
 import React from "react";
-import { css } from "@emotion/core";
-import AppLoader from "react-spinners/RingLoader";
 import './loader.scss';
 
-const loaderColor = "#FFFFFF";
-const override = css`
-  display: block;
-  margin: 2 auto;
-  border-color: ${loaderColor};
-`;
+import octocatSpinner from '../../assets/images/octocat-spinner.gif';
 
-const Loader = ()=>{
-    return  <div id="loader-content">
-        <div className="sweet-loader">
-        <AppLoader
-            css={override}
-            size={60}
-            color={loaderColor}
-            loading={true}
-        />
-        </div>
-    </div>
+const Loader = () => {
+	return <div id="loader-content">
+		<div className="octocat-spinner">
+			<img src={octocatSpinner} alt="octocat" width="60" />
+		</div>
+	</div>
 }
 
-export default Loader
+export default Loader;
