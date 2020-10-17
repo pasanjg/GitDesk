@@ -5,9 +5,29 @@ export const FETCH_ACTIVITY = gql`
   viewer {
     login
     avatarUrl
+    contributionsCollection {
+      contributionCalendar {
+        totalContributions
+        months{
+          name
+          year
+        }
+      }
+      totalCommitContributions
+      issueContributions {
+        totalCount
+      }
+      pullRequestContributions {
+        totalCount
+      }
+      pullRequestReviewContributions {
+        totalCount
+      }
+    }
     issues(first: 10, orderBy: {field: UPDATED_AT, direction: DESC}) {
       totalCount
       nodes {
+        url
         number
         state
         updatedAt
@@ -28,6 +48,7 @@ export const FETCH_ACTIVITY = gql`
     pullRequests(first: 10, orderBy: {field: UPDATED_AT, direction: DESC}) {
       totalCount
       nodes {
+        url
         number
         state
         updatedAt

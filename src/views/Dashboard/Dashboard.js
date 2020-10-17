@@ -23,15 +23,31 @@ export default function Dashboard() {
 		const pullRequests = data.viewer.pullRequests;
 		const gists = data.viewer.gists;
 
+		const contributionsCollection = data.viewer.contributionsCollection;
+		const months = contributionsCollection.contributionCalendar.months;
+
 		return (
 			<div className="dashboard-content">
 				<div className="row">
 
-					<div className="col-md-4">
+					<div className="col-lg-3 col-md-6 col-sm-6">
 						<div className="dash-card">
 							<div className="stats">
-								<label>Issues</label>
-								<span>{issues.totalCount}</span>
+								<div className="title">Contributions</div>
+								<div className="value">{contributionsCollection.contributionCalendar.totalContributions}</div>
+							</div>
+							<hr />
+							<div className="details">
+								<i className="text-muted">{months[0].year} {months[0].name} &bull; {months[months.length - 1].year} {months[months.length - 1].name}</i>
+							</div>
+						</div>
+					</div>
+
+					<div className="col-lg-3 col-md-6 col-sm-6">
+						<div className="dash-card">
+							<div className="stats">
+								<label className="title">Issues</label>
+								<span className="value">{issues.totalCount}</span>
 							</div>
 							<hr />
 							<div className="details">
@@ -40,11 +56,11 @@ export default function Dashboard() {
 						</div>
 					</div>
 
-					<div className="col-md-4">
+					<div className="col-lg-3 col-md-6 col-sm-6">
 						<div className="dash-card">
 							<div className="stats">
-								<label>Pull Requests</label>
-								<span>{pullRequests.totalCount}</span>
+								<label className="title">Pull Requests</label>
+								<span className="value">{pullRequests.totalCount}</span>
 							</div>
 							<hr />
 							<div className="details">
@@ -53,11 +69,11 @@ export default function Dashboard() {
 						</div>
 					</div>
 
-					<div className="col-md-4">
+					<div className="col-lg-3 col-md-6 col-sm-6">
 						<div className="dash-card">
 							<div className="stats">
-								<label>Gists</label>
-								<span>{gists.totalCount}</span>
+								<label className="title">Gists</label>
+								<span className="value">{gists.totalCount}</span>
 							</div>
 							<hr />
 							<div className="details">
@@ -68,24 +84,26 @@ export default function Dashboard() {
 				</div>
 
 				<div className="statistics">
-					<h6>Statistics</h6>
+					<h6>Summary</h6>
 					<div className="row">
 
 						<div className="col-md-12">
 							<div className="stat-card">
 								<p>Last 10 Issues</p>
-								<hr />
 								{
 									issues.totalCount === 0 ? <span><i className="text-muted">No Issues</i></span> :
 										issues.nodes.map((issue, index) => {
 											return (
 												<div key={index}>
+													<hr />
 													<div className="row details">
-														<span className="number col text-left">#{issue.number}</span>
+														<span className="number col text-left">
+															<a href={issue.url} target="_blank" rel="noopener noreferrer">#{issue.number}</a>
+														</span>
 														<span className="col text-left">{issue.repository.nameWithOwner}</span>
 														<span className="col text-center">{issue.repository.isPrivate ? <i className="fa fa-lock"></i> : <i className="fa fa-globe-asia"></i>}</span>
 														<span className="col text-center">{moment(issue.updatedAt).format("MMM Do YYYY")}</span>
-														<span className="col text-center"><span className={`state ${issue.state.toLowerCase()}`}>{issue.state}</span></span>
+														<span className="col d-flex justify-content-center"><span className={`state ${issue.state.toLowerCase()}`}>{issue.state}</span></span>
 														<span className="col text-right">
 															{
 																issue.participants.nodes.map((partcipant, index) => {
@@ -100,7 +118,6 @@ export default function Dashboard() {
 															}
 														</span>
 													</div>
-													<hr />
 												</div>
 											);
 										})
@@ -111,18 +128,20 @@ export default function Dashboard() {
 						<div className="col-md-12">
 							<div className="stat-card">
 								<p>Last 10 Pull Requests</p>
-								<hr />
 								{
 									pullRequests.totalCount === 0 ? <span><i className="text-muted">No Pull Requests</i></span> :
 										pullRequests.nodes.map((request, index) => {
 											return (
 												<div key={index}>
+													<hr />
 													<div className="row details">
-														<span className="number col text-left">#{request.number}</span>
+														<span className="number col text-left">
+															<a href={request.url} target="_blank" rel="noopener noreferrer">#{request.number}</a>
+														</span>
 														<span className="col text-left">{request.repository.nameWithOwner}</span>
 														<span className="col text-center">{request.repository.isPrivate ? <i className="fa fa-lock"></i> : <i className="fa fa-globe-asia"></i>}</span>
 														<span className="col text-center">{moment(request.updatedAt).format("MMM Do YYYY")}</span>
-														<span className="col text-center"><span className={`state ${request.state.toLowerCase()}`}>{request.state}</span></span>
+														<span className="col d-flex justify-content-center"><span className={`state ${request.state.toLowerCase()}`}>{request.state}</span></span>
 														<span className="col text-right">
 															{
 																request.participants.nodes.map((partcipant, index) => {
@@ -137,7 +156,6 @@ export default function Dashboard() {
 															}
 														</span>
 													</div>
-													<hr />
 												</div>
 											);
 										})
@@ -148,12 +166,12 @@ export default function Dashboard() {
 						<div className="col-md-12">
 							<div className="stat-card">
 								<p>Last 10 Gists</p>
-								<hr />
 								{
 									gists.totalCount === 0 ? <span><i className="text-muted">No Gists</i></span> :
 										gists.nodes.map((gist, index) => {
 											return (
 												<div key={index}>
+													<hr />
 													<div className="row details">
 														<span className="name col text-left">{gist.files[0].name}</span>
 														<a href={gist.url} target="_blank" rel="noopener noreferrer">
@@ -163,7 +181,6 @@ export default function Dashboard() {
 														<span className="col text-right">{gist.isFork ? <i className="fa fa-code-branch"></i> : <i></i>}</span>
 														<span className="col text-right">{moment(gist.updatedAt).format("MMM Do YYYY")}</span>
 													</div>
-													<hr />
 												</div>
 											);
 										})
