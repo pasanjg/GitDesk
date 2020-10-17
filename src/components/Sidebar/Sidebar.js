@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import ReactTooltip from "react-tooltip";
 import { clearLocalStorage } from '../../utils/Util';
+import $ from 'jquery';
 import packageJson from '../../../package.json';
 
 import "./Sidebar.scss";
@@ -10,6 +10,13 @@ import appLogo from "../../assets/images/appLogo.svg";
 // const { shell } = window.require('electron');
 
 export class Sidebar extends Component {
+
+	constructor(props) {
+		super(props)
+		$(document).on('click', '.item', function (e) {
+			$(this).addClass('active').siblings().removeClass('active');
+		});
+	}
 
 	logout = (e) => {
 		e.preventDefault()
@@ -21,63 +28,49 @@ export class Sidebar extends Component {
 		return (
 			<div>
 				<nav className="sidebar">
-					<ul className="navlist">
-						<Link to="/home/dashboard">
-							<li className="logo">
+					<ul className="nav-list">
+						<li className="logo">
+							<Link to="/home/dashboard">
 								<img src={appLogo} alt="" width="45" />
-							</li>
-						</Link>
-						<Link to="/home/dashboard">
-							<li className="item" data-tip="Dashboard" data-for="dashboard">
-								<i className="fa fa-home"></i>
-							</li>
-							<ReactTooltip
-								id="dashboard"
-								place="right"
-								type="dark"
-								effect="solid"
-							/>
-						</Link>
-						<Link to="/home/repositories">
-							<li
-								className="item"
-								data-tip="Repositories"
-								data-for="repositories"
-							>
-								<i className="fa fa-book"></i>
-							</li>
-							<ReactTooltip
-								id="repositories"
-								place="right"
-								type="dark"
-								effect="solid"
-							/>
-						</Link>
-						<Link to="/home/profile">
-							<li className="item" data-tip="Profile" data-for="profile">
-								<i className="fa fa-user-circle"></i>
-							</li>
-							<ReactTooltip
-								id="profile"
-								place="right"
-								type="dark"
-								effect="solid"
-							/>
-						</Link>
-						<Link to="/home/about">
-							<li className="item" data-tip="About" data-for="about">
-								<i className="fa fa-info-circle"></i>
-							</li>
-							<ReactTooltip id="about" place="right" type="dark" effect="solid" />
-						</Link>
+								<label className="logo-title">
+									<label>GitDesk</label>
+									<label className="version text-muted">v{packageJson.version}</label>
+								</label>
+							</Link>
+						</li>
 
+						<li className={"item " + (window.location.pathname.includes('dashboard') ? 'active' : '')} data-tip="Dashboard" data-for="dashboard">
+							<Link to="/home/dashboard">
+								<i className="fa fa-home"></i>
+								<label className="nav-title">Dashboard</label>
+							</Link>
+						</li>
+
+						<li className={"item " + (window.location.pathname.includes('repositories') ? 'active' : '')} data-tip="Repositories" data-for="repositories">
+							<Link to="/home/repositories">
+								<i className="fa fa-book"></i>
+								<label className="nav-title">Repositories</label>
+							</Link>
+						</li>
+
+						<li className={"item " + (window.location.pathname.includes('profile') ? 'active' : '')} data-tip="Profile" data-for="profile">
+							<Link to="/home/profile">
+								<i className="fa fa-user-circle"></i>
+								<label className="nav-title">Profile</label>
+							</Link>
+						</li>
+
+						<li className={"item " + (window.location.pathname.includes('about') ? 'active' : '')} data-tip="About" data-for="about">
+							<Link to="/home/about">
+								<i className="fa fa-info-circle"></i>
+								<label className="nav-title">About</label>
+							</Link>
+						</li>
 
 						<li className="item" onClick={this.logout} data-tip="Logout" data-for="logout">
 							<i className="fa fa-sign-out-alt"></i>
+							<label className="nav-title">Logout</label>
 						</li>
-						<ReactTooltip id="logout" place="right" type="dark" effect="solid" />
-
-
 
 						<div className="github" data-tip="View on GitHub" data-for="github"
 							onClick={() => {
@@ -86,11 +79,10 @@ export class Sidebar extends Component {
 						>
 							<a href="https://github.com/pasanjg/GitHub-Desktop" target="_blank" rel="noopener noreferrer">
 								<i className="fab fa-github"></i>
+								<label className="nav-title">GitHub</label>
 							</a>
-							<span className="version">v{packageJson.version}</span>
 						</div>
 
-						<ReactTooltip id="github" place="right" type="dark" effect="solid" />
 					</ul>
 				</nav>
 			</div>

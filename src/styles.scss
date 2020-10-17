@@ -2,41 +2,45 @@
 @import "./assets/scss/color";
 
 @font-face {
-    font-family: "SFProDisplay";
-    src: local("SFProDisplay"), url(./assets/fonts/SFProDisplay-Regular.ttf) format("truetype");
+  font-family: "SFProDisplay";
+  src: local("SFProDisplay"), url(./assets/fonts/SFProDisplay-Regular.ttf) format("truetype");
 }
 
 @font-face {
-    font-family: "SFProDisplay";
-    font-style: bold;
-    font-weight: 700;
-    src: local("SFProDisplay"), url(./assets/fonts/SFProDisplay-Bold.ttf) format("truetype");
+  font-family: "SFProDisplay";
+  font-style: bold;
+  font-weight: 700;
+  src: local("SFProDisplay"), url(./assets/fonts/SFProDisplay-Bold.ttf) format("truetype");
+}
+
+a {
+  text-decoration: none;
 }
 
 // scrollbar styles
 ::-webkit-scrollbar {
-    width: 10px;
-  }
-  
-  ::-webkit-scrollbar-track {
-    background: $default-black-dark;
-  }
-  
-  ::-webkit-scrollbar-thumb {
-    background: transparency($default-black-dark, 20);
-  }
-  
-  ::-webkit-scrollbar-thumb:hover {
-    background: $default-black-light;
-  }
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: $default-black-dark;
+}
+
+::-webkit-scrollbar-thumb {
+  background: transparency($default-black-dark, 20);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: $default-black-light;
+}
 
 body {
-    font-family: "SFProDisplay";
-    box-shadow: none;
-    outline: none;
+  font-family: "SFProDisplay";
+  box-shadow: none;
+  outline: none;
 }
 
 //padding for page content
-.content-padding{
-    padding: 5px 10px 5px 10px;
+.content-padding {
+  padding: 5px 10px 5px 10px;
 }
