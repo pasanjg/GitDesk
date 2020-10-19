@@ -17,8 +17,6 @@ export default function Dashboard() {
 		return <ErrorPage error={error} />;
 	else {
 
-		console.log(data);
-
 		const issues = data.viewer.issues;
 		const pullRequests = data.viewer.pullRequests;
 		const gists = data.viewer.gists;

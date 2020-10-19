@@ -1,12 +1,12 @@
 @import "../../assets/scss/color.scss";
 
-.main-content{
-  background-color: $default-black-dark !important;
-  margin-left: 140px;
+.main-content {
+	background-color: $default-black-dark !important;
+	margin-left: 210px;
 }
 
 @media screen and (max-width: 1200px) {
 	.main-content {
-		margin-left: 0px;
+		margin-left: 70px;
 	}
 }

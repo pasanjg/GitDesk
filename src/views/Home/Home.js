@@ -14,6 +14,7 @@ import './Home.scss';
 import { ApolloProvider } from '@apollo/react-hooks';
 import client from '../../utils/client';
 import Login from '../Login/Login';
+import Searchbar from '../../components/Searchbar/Searchbar';
 
 export class Home extends Component {
 
@@ -70,6 +71,7 @@ export class Home extends Component {
 						<>
 							<Sidebar />
 							<div className="main-content">
+								<Searchbar />
 								<Switch>
 									<ApolloProvider client={client}>
 										<Route path="/home/dashboard" component={Dashboard} />

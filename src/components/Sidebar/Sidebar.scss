@@ -8,20 +8,19 @@
 	top: 0;
 	left: 0;
 	overflow-x: hidden;
-	padding-top: 20px;
 	background-color: $default-black;
 	// transition: all 0.2s;
 
 	.nav-list {
 		list-style: none;
+		margin-top: 20px;
 		padding: 0 12px;
 		display: flex;
 		flex-direction: column;
-		justify-content: center;
+		justify-content: flex-start;
 		align-items: flex-start;
 
 		.logo {
-			margin-top: 20px;
 			margin-bottom: 50px;
 			color: $white;
 			display: flex;
@@ -30,7 +29,7 @@
 				font-size: 26px;
 				font-weight: bold;
 				color: $white;
-				margin: 15px 0 0 10px;
+				margin-left: 15px;
 
 				.version {
 					font-size: 10px;
@@ -91,6 +90,12 @@
 		width: 70px;
 
 		.nav-list {
+			margin-top: 22px;
+
+			.logo {
+				margin-bottom: 58px;
+			}
+
 			.item,
 			.github {
 				width: 48px !important;
