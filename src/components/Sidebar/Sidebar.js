@@ -2,10 +2,8 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { clearLocalStorage } from '../../utils/Util';
 import $ from 'jquery';
-import packageJson from '../../../package.json';
 
 import "./Sidebar.scss";
-import appLogo from "../../assets/images/appLogo.svg";
 
 // const { shell } = window.require('electron');
 
@@ -29,16 +27,6 @@ export class Sidebar extends Component {
 			<div>
 				<nav className="sidebar">
 					<ul className="nav-list">
-						<li className="logo">
-							<Link to="/home/dashboard">
-								<img src={appLogo} alt="" width="45" />
-								<label className="logo-title">
-									<label>GitDesk</label>
-									<label className="version text-muted">v{packageJson.version}</label>
-								</label>
-							</Link>
-						</li>
-
 						<li className={"item " + (window.location.pathname.includes('dashboard') ? 'active' : '')} data-tip="Dashboard" data-for="dashboard">
 							<Link to="/home/dashboard">
 								<i className="fa fa-home"></i>

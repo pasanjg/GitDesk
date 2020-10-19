@@ -1,28 +1,53 @@
 @import "../../assets/scss/color.scss";
 
 .search-content {
+	width: 100vw;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	padding: 20px 30px;
-	color: $white;
+	position: fixed;
+	z-index: 2;
+	padding: 20px 38px 20px 20px;
 	background-color: $default-black-light;
 
-	.search{
+	.logo  {
+		height: 20px;
+		margin-right: 55px;
+		padding: auto;
+		color: $white;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+
+		.logo-title {
+			font-size: 26px;
+			font-weight: bold;
+			color: $white;
+			margin-left: 15px;
+
+			.version {
+				font-size: 8px;
+				margin-left: 8px;
+				margin-bottom: auto;
+			}
+		}
+	}
+
+	.search {
 		.search-input {
-			width: 300px;
+			width: 315px;
 			height: 40px;
 			border-radius: 8px;
 			padding: 0 15px;
 			color: $white;
 			background-color: transparency($default-black-light, 20);
 			border: none;
-	
-			&:focus{
+
+			&:focus {
 				outline: none;
 			}
 		}
-	
+
 		.search-btn {
 			width: 60px;
 			height: 40px;
@@ -32,12 +57,12 @@
 			color: $default-gray;
 			background-color: $default-black;
 			transition: all 0.2s;
-	
+
 			&:hover {
 				background-color: $default-black-dark;
 			}
-	
-			&:all{
+
+			&:all {
 				outline: none;
 				border: none;
 				box-shadow: none;
@@ -45,7 +70,7 @@
 		}
 	}
 
-	.search-filter{
+	.search-filter {
 		margin: 0 auto;
 	}
 }
