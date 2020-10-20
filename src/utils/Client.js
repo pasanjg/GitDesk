@@ -1,7 +1,7 @@
 import ApolloClient from 'apollo-boost';
 import { getLocalStorage } from './Util';
 
-const client = new ApolloClient({
+const Client = new ApolloClient({
     uri: 'https://api.github.com/graphql',
     fetchOptions: {
         "x-accepted-oauth-scopes": "repo",
@@ -17,4 +17,4 @@ const client = new ApolloClient({
     },
 });
 
-export default client;
+export default Client;

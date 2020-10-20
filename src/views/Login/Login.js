@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import githubLogo from '../../assets/images/githubLogo.svg';
-import { getLocalStorage } from "../../utils/Util";
+import { appIsDev, getGitHubClientID, getLocalStorage } from "../../utils/Util";
 import "./Login.scss";
 
 export class Login extends Component {
@@ -12,6 +12,7 @@ export class Login extends Component {
 
 	componentDidMount() {
 		this.checkAuthentication();
+		console.log("appIsDev", appIsDev());
 	}
 
 	checkAuthentication() {
@@ -24,7 +25,7 @@ export class Login extends Component {
 	}
 
 	render() {
-		const CLIENT_ID = 'deb1fe3d3ce3b6964133';
+		const CLIENT_ID = getGitHubClientID();
 
 		return (
 			<div id="login-content">
