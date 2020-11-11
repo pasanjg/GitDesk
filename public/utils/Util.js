@@ -18,11 +18,7 @@ export const clearLocalStorage = () => {
 }
 
 export const appIsDev = () => {
-  if (process.env.NODE_ENV === 'development') {
-    return true;
-  } else {
-    return false;
-  }
+  return process.env.REACT_APP_IS_DEV || false;
 };
 
 export const getGitHubClientID = () => appIsDev() ? process.env.REACT_APP_GITHUB_OAUTH_DEV_CLIENT_ID : process.env.REACT_APP_GITHUB_OAUTH_PROD_CLIENT_ID;
