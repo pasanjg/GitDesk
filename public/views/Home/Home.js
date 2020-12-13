@@ -37,12 +37,12 @@ export class Home extends Component {
 
 			console.log('Code:', code);
 
-			const apiURL = "http://oauth-gh.herokuapp.com/authenticate/";
+			const apiURL = "/api/authenticate";
 			let token = "";
 
 			await axios({
 				method: 'get',
-				url: `${apiURL}${code}`,
+				url: `${apiURL}/${code}`,
 
 				headers: {
 					accept: 'application/json'
