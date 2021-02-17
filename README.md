@@ -1,4 +1,4 @@
-<img src="https://i.morioh.com/2019/11/15/2d0baf6e8708.jpg" width="100%" />
+<img src="internal/images/banner.jpg" width="100%" />
 
 <div align="center">
 
@@ -10,17 +10,17 @@
 
 GitHub Client application built with React using the GitHub [GraphQL API](https://docs.github.com/en/free-pro-team@latest/graphql)
 
-NodeJS App in `server/` is deployed to [Heroku](http://oauth-gh.herokuapp.com/)
+NodeJS App in `api/` is deployed to [Heroku](http://oauth-gh.herokuapp.com/)
 
-Authorizarion Token wil be retreived from there `/authenticate/:code`
+Authorization Token is retreived from `/authenticate/:code`
 
 ## Install
 
 Clone the repo and install dependencies:
 
 ```bash
-$ git clone https://github.com/pasanjg/GitHub-Desktop.git
-$ cd GitHub-Desktop
+$ git clone https://github.com/pasanjg/GitDesk.git
+$ cd GitDesk
 $ npm install
 ```
 
@@ -28,14 +28,6 @@ $ npm install
 
 ```bash
 npm start
-```
-
-## Build Release
-
-To package app for web:
-
-```bash
-npm run build
 ```
 
 ## Screenshots
