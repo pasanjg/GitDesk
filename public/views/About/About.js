@@ -5,10 +5,9 @@ import appLogo from "../../assets/images/appLogo.svg";
 
 // const { shell } = window.require('electron');
 
-export class About extends Component {
-	render() {
-		return (
-			<div id="about-content">
+export default function About() {
+	return (
+		<div id="about-content">
 				<div className="main">
 					<img
 						src={appLogo}
@@ -34,8 +33,6 @@ export class About extends Component {
 					</div>
 				</div>
 			</div>
-		)
-	}
+	)
 }
 
-export default About;

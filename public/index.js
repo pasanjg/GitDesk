@@ -10,11 +10,11 @@ import Login from './views/Login/Login';
 const routing = (
 	<Router>
 		<Switch>
-			<Route exact path="/" component={Login} />
+			<Route path="/" component={Home} />
+			<Route exact path="/login" component={Login} />
 			<Route exact path="/github/callback" component={Home} />
-			<Route path="/home" component={Home} />
 			<Route path="/about" component={About} />
-			<Redirect to="/" />
+			<Redirect to="/login" />
 		</Switch>
 	</Router>
 )

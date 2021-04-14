@@ -15,6 +15,7 @@ import Header from '../../components/Header/Header';
 import './Home.scss';
 
 import Client from '../../utils/Client';
+import Search from '../Search/Search';
 
 export class Home extends Component {
 
@@ -71,11 +72,12 @@ export class Home extends Component {
 								<Sidebar />
 								<Switch>
 									<ApolloProvider client={Client}>
+										{/* <Route path="/" component={Dashboard} /> */}
 										<Route path="/home/dashboard" component={Dashboard} />
+										<Route path="/home/search" component={Search} />
 										<Route path="/home/repositories" component={Repositories} />
 										<Route path="/home/profile" component={Profile} />
 										<Route path="/home/about" component={About} />
-										<Redirect to="/home/dashboard" />
 									</ApolloProvider>
 								</Switch>
 							</div>
