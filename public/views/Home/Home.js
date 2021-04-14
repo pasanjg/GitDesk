@@ -53,7 +53,7 @@ export class Home extends Component {
 				token = response.data.token;
 				console.log(token);
 				setLocalStorage('token', token);
-				window.location.href = '/home/dashboard';
+				window.location.href = '/dashboard';
 			});
 		}
 
@@ -72,12 +72,11 @@ export class Home extends Component {
 								<Sidebar />
 								<Switch>
 									<ApolloProvider client={Client}>
-										{/* <Route path="/" component={Dashboard} /> */}
-										<Route path="/home/dashboard" component={Dashboard} />
-										<Route path="/home/search" component={Search} />
-										<Route path="/home/repositories" component={Repositories} />
-										<Route path="/home/profile" component={Profile} />
-										<Route path="/home/about" component={About} />
+										<Route path="/dashboard" component={Dashboard} />
+										<Route path="/search" component={Search} />
+										<Route path="/repositories" component={Repositories} />
+										<Route path="/profile" component={Profile} />
+										<Route path="/about" component={About} />
 									</ApolloProvider>
 								</Switch>
 							</div>

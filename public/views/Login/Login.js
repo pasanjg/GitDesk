@@ -20,7 +20,7 @@ export class Login extends Component {
 
 		if (token !== null) {
 			console.log('Authorized');
-			window.location.href = "/home/dashboard"
+			window.location.href = "/dashboard"
 		}
 	}
 

@@ -21,7 +21,7 @@ export default function Searchbar() {
 
 	function handleSearch(e) {
 		e.preventDefault();
-		window.location.href = `/home/search?q=${search}`;
+		window.location.href = `/search?q=${search}`;
 	}
 
 	return (

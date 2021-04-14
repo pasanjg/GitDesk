@@ -28,28 +28,28 @@ export class Sidebar extends Component {
 				<nav className="sidebar">
 					<ul className="nav-list">
 						<li className={"item " + (window.location.pathname.includes('dashboard') ? 'active' : '')} data-tip="Dashboard" data-for="dashboard">
-							<Link to="/home/dashboard">
+							<Link to="/dashboard">
 								<i className="fa fa-home"></i>
 								<label className="nav-title">Dashboard</label>
 							</Link>
 						</li>
 
 						<li className={"item " + (window.location.pathname.includes('repositories') ? 'active' : '')} data-tip="Repositories" data-for="repositories">
-							<Link to="/home/repositories">
+							<Link to="/repositories">
 								<i className="fa fa-book"></i>
 								<label className="nav-title">Repositories</label>
 							</Link>
 						</li>
 
 						<li className={"item " + (window.location.pathname.includes('profile') ? 'active' : '')} data-tip="Profile" data-for="profile">
-							<Link to="/home/profile">
+							<Link to="/profile">
 								<i className="fa fa-user-circle"></i>
 								<label className="nav-title">Profile</label>
 							</Link>
 						</li>
 
 						<li className={"item " + (window.location.pathname.includes('about') ? 'active' : '')} data-tip="About" data-for="about">
-							<Link to="/home/about">
+							<Link to="/about">
 								<i className="fa fa-info-circle"></i>
 								<label className="nav-title">About</label>
 							</Link>

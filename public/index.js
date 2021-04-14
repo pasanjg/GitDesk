@@ -13,7 +13,6 @@ const routing = (
 			<Route path="/" component={Home} />
 			<Route exact path="/login" component={Login} />
 			<Route exact path="/github/callback" component={Home} />
-			<Route path="/about" component={About} />
 			<Redirect to="/login" />
 		</Switch>
 	</Router>
