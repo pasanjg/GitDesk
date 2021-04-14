@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import githubLogo from '../../assets/images/githubLogo.svg';
-import { appIsDev, getGitHubClientID, getLocalStorage } from "../../utils/Util";
+import { getGitHubClientID, getLocalStorage } from "../../utils/Util";
 import "./Login.scss";
 
 export class Login extends Component {
@@ -12,7 +12,6 @@ export class Login extends Component {
 
 	componentDidMount() {
 		this.checkAuthentication();
-		console.log("appIsDev", appIsDev());
 	}
 
 	checkAuthentication() {
