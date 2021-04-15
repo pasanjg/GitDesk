@@ -27,7 +27,7 @@ export class Login extends Component {
 		const CLIENT_ID = getGitHubClientID();
 
 		return (
-			<div id="login-content">
+			<div className="login-content">
 				<div className="main">
 					<img src={githubLogo} alt="logo" width="150" />
 					<code className="text-center">Just Login. We'll callback you. <br /> It's a promise!</code>

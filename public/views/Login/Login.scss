@@ -1,13 +1,26 @@
 @import "../../assets/scss/color.scss";
 
-#login-content {
+.login-content {
 	display: grid;
 	height: 100vh;
 	place-items: center;
 	background-color: $default-black-dark;
 
+	&::before {
+		content: "";
+		position: fixed;
+		height: 100vh;
+		width: 100vw;
+		background-image: url(https://cli.github.com/assets/images/light-glow.svg);
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+		filter: blur(50px);
+		filter: opacity(0.6);
+	}
+
 	.main {
-		height: 400px;
+		height: 450px;
 		width: 300px;
 		display: flex;
 		flex-direction: column;
@@ -17,6 +30,7 @@
 		border-radius: 10px;
 		background-color: $default-black;
 		transition: all 0.2s;
+		filter: blur(0) !important;
 
 		&:hover {
 			background-color: $default-black-light;
