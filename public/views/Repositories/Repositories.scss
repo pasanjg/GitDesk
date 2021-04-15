@@ -1,131 +1,202 @@
 @import "../../assets/scss/color.scss";
 
-.repository-content{
-  color: $white;
-  background-color: $default-black-dark;  position: relative;
-  top:0;
-  bottom: auto;
-  min-height: 100%;
-  left: 0;
+$card-background: #1a1a1a;
+$pill-background: #1a1a1a;
+$card-header-background: $default-black-light;
 
-  .title{
+.repository-content {
+  min-height: 100vh;
+  padding: 30px 16px;
+  color: $white;
+  background-color: $default-black-dark;
+
+  .title {
     font-size: 25px;
     font-weight: bold;
   }
 
-  .Dropdown-control {
-    width: 200px;
+
+
+  .Dropdown-root {
+    position: relative;
+
+    .Dropdown-control {
+      position: relative;
+      overflow: hidden;
+      width: 200px;
+      background-color: $card-background;
+      border-radius: 8px;
+      box-sizing: border-box;
+      color: $default-light;
+      cursor: default;
+      outline: none;
+      padding: 8px 52px 8px 10px;
+      transition: all 200ms ease;
+    }
+
+    .Dropdown-control:hover {
+      box-shadow: 0 1px 0 rgba(0, 0, 0, 0.06);
+    }
+
+    .Dropdown-arrow {
+      border-color: #999 transparent transparent;
+      border-style: solid;
+      border-width: 5px 5px 0;
+      content: " ";
+      display: block;
+      height: 0;
+      margin-top: -ceil(2.5);
+      position: absolute;
+      right: 10px;
+      top: 14px;
+      width: 0;
+    }
+
+    .is-open .Dropdown-arrow {
+      border-color: transparent transparent #999;
+      border-width: 0 5px 5px;
+    }
+
+    .Dropdown-menu {
+      background-color: transparency($default-black, 5);
+      border-radius: 8px;
+      box-shadow: 0 1px 0 rgba(0, 0, 0, 0.06);
+      box-sizing: border-box;
+      margin-top: -1px;
+      max-height: 200px;
+      overflow-y: auto;
+      position: absolute;
+      top: 100%;
+      width: 100%;
+      z-index: 1000;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .Dropdown-menu .Dropdown-group > .Dropdown-title {
+      padding: 8px 10px;
+      color: $default-light;
+      font-weight: bold;
+      text-transform: capitalize;
+    }
+
+    .Dropdown-option {
+      box-sizing: border-box;
+      color: $default-light;
+      cursor: pointer;
+      display: block;
+      padding: 8px 10px;
+    }
+
+    .Dropdown-option:last-child {
+      border-bottom-right-radius: 2px;
+      border-bottom-left-radius: 2px;
+    }
+
+    .Dropdown-option:hover {
+      background-color: transparency($default-black-light, 20);
+    }
+
+    .Dropdown-option.is-selected {
+      background-color: #f2f9fc;
+      color: transparency($default-black-light, 20);
+    }
+
+    .Dropdown-noresults {
+      box-sizing: border-box;
+      color: #ccc;
+      cursor: default;
+      display: block;
+      padding: 8px 10px;
+    }
+  }
+
+  .repo-card {
+    margin: 10px 0;
+    padding: 15px 18px;
+    border: 1px;
+    border-radius: 8px;
+    background-color: $default-black;
+    transition: all 0.5s;
+
+    .details {
+      display: flex;
+      align-items: center;
+      h5 {
+        font-weight: bold !important;
+        margin-bottom: 0;
+        margin-right: 10px;
+      }
+
+      .fa-lock {
+        color: $default-gray;
+      }
+    }
+
+    .languages {
+      margin: 5px 0 !important;
+
+      span {
+        color: $default-light;
+        font-size: 12px;
+        padding: 3px 5px;
+        margin-right: 5px;
+        border-radius: 5px;
+      }
+    }
+
+    .repo-stats {
+      font-size: 14px;
+      margin: 10px 0;
+
+      .github-icon {
+        color: red;
+        margin-right: 10px;
+
+        .gh-icon {
+          fill: $white;
+        }
+      }
+    }
+
+    .text-muted {
+      font-size: 15px;
+      margin-top: 5px;
+    }
+
+    .text-secondary {
+      font-style: italic;
+    }
+
+    .meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .text-muted {
+        font-size: 12px;
+      }
+
+      .collaborators {
+        margin: 0;
+
+        .text-muted {
+          font-size: 12px;
+          margin-right: 5px;
+        }
+
+        .collaborator-img {
+          width: 20px;
+          height: 20px;
+          border-radius: 100%;
+          margin-right: 5px;
+        }
+      }
+    }
+
+    &:hover {
+      background-color: $default-black-light;
+    }
   }
 }
 
-$card-background : #1a1a1a;
-$pill-background : #1a1a1a;
-$card-header-background : $default-black-light;
-.repository-card{
-  background-color: $card-background !important;
-}
 
-.repository-card-header{
-  background-color: $card-header-background !important;
-}
-.repository-pill{
-  background-color: $pill-background;
-}
-.card-icon{
-  display: flex;
-  justify-content: flex-end;
-}
-
-.Dropdown-root {
-  position: relative;
-}
-
-.Dropdown-control {
-  position: relative;
-  overflow: hidden;
-  background-color: $card-background;
-  border: 1px solid $default-black-light;
-  border-radius: 2px;
-  box-sizing: border-box;
-  color: $default-light;
-  cursor: default;
-  outline: none;
-  padding: 8px 52px 8px 10px;
-  transition: all 200ms ease;
-}
-
-.Dropdown-control:hover {
-  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.06);
-}
-
-.Dropdown-arrow {
-  border-color: #999 transparent transparent;
-  border-style: solid;
-  border-width: 5px 5px 0;
-  content: ' ';
-  display: block;
-  height: 0;
-  margin-top: -ceil(2.5);
-  position: absolute;
-  right: 10px;
-  top: 14px;
-  width: 0
-}
-
-.is-open .Dropdown-arrow {
-  border-color: transparent transparent #999;
-  border-width: 0 5px 5px;
-}
-
-.Dropdown-menu {
-  background-color: $default-black-light;
-  border: 1px solid $default-black-dark;
-  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.06);
-  box-sizing: border-box;
-  margin-top: -1px;
-  max-height: 200px;
-  overflow-y: auto;
-  position: absolute;
-  top: 100%;
-  width: 100%;
-  z-index: 1000;
-  -webkit-overflow-scrolling: touch;
-}
-
-.Dropdown-menu .Dropdown-group > .Dropdown-title{
-  padding: 8px 10px;
-  color: $default-light;
-  font-weight: bold;
-  text-transform: capitalize;
-}
-
-.Dropdown-option {
-  box-sizing: border-box;
-  color: $default-light;
-  cursor: pointer;
-  display: block;
-  padding: 8px 10px;
-}
-
-.Dropdown-option:last-child {
-  border-bottom-right-radius: 2px;
-  border-bottom-left-radius: 2px;
-}
-
-.Dropdown-option:hover {
-  background-color: $default-black-dark;
-  color: $default-gray;
-}
-
-.Dropdown-option.is-selected {
-  background-color: #f2f9fc;
-  color: #333;
-}
-
-.Dropdown-noresults {
-  box-sizing: border-box;
-  color: #ccc;
-  cursor: default;
-  display: block;
-  padding: 8px 10px;
-}

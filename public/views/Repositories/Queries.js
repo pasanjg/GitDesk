@@ -1,6 +1,6 @@
 import gql from 'graphql-tag';
 
-export const FETCH_REPOSITORIES = (field,dir)=> gql`
+export const FETCH_REPOSITORIES = (field, dir) => gql`
     {
         viewer {
             repositories(first: 100 orderBy:{field: ${field},direction: ${dir}}) {
@@ -14,6 +14,13 @@ export const FETCH_REPOSITORIES = (field,dir)=> gql`
                     isArchived
                     url
                     descriptionHTML
+                    collaborators {
+                        totalCount
+                        nodes {
+                            login
+                            avatarUrl
+                        }
+                    }
                     languages(first:10){
                         nodes{
                             name

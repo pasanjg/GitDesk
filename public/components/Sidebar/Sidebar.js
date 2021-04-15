@@ -65,7 +65,7 @@ export class Sidebar extends Component {
 								// shell.openExternal('https://github.com/pasanjg/GitHub-Desktop')
 							}}
 						>
-							<a href="https://github.com/pasanjg/GitHub-Desktop" target="_blank" rel="noopener noreferrer">
+							<a href="https://github.com/pasanjg/GitDesk" target="_blank" rel="noopener noreferrer">
 								<i className="fab fa-github"></i>
 								<label className="nav-title">GitHub</label>
 							</a>
