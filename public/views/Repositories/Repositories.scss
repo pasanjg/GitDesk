@@ -6,7 +6,7 @@ $card-header-background: $default-black-light;
 
 .repository-content {
   min-height: 100vh;
-  padding: 30px 16px;
+  padding: 30px 15px 15px;
   color: $white;
   background-color: $default-black-dark;
 
@@ -14,8 +14,6 @@ $card-header-background: $default-black-light;
     font-size: 25px;
     font-weight: bold;
   }
-
-
 
   .Dropdown-root {
     position: relative;
@@ -111,7 +109,8 @@ $card-header-background: $default-black-light;
   }
 
   .repo-card {
-    margin: 10px 0;
+    min-height: 200px;
+    margin: 15px 0;
     padding: 15px 18px;
     border: 1px;
     border-radius: 8px;

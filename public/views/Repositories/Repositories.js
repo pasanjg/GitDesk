@@ -68,11 +68,13 @@ const Repositories = ({ token }) => {
 										<h6 className="text-muted">{repo.nameWithOwner}</h6>
 										<div className="languages">
 											{
-												repo.languages.nodes.map((language, index) => {
-													return (
-														<span key={index} style={{ backgroundColor: `${language.color}` }}>{language.name}</span>
-													);
-												})
+												repo.languages.nodes.length > 0 ? 
+													repo.languages.nodes.map((language, index) => {
+														return (
+															<span key={index} style={{ backgroundColor: `${language.color}` }}>{language.name}</span>
+														);
+													}) : 
+													<span key={index} style={{ backgroundColor: "#313131" }}>N/A</span>
 											}
 										</div>
 										<div className="row repo-stats">
