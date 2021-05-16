@@ -6,7 +6,6 @@
   "author": {
     "name": "Pasan Godamune"
   },
-  "main": "server.js",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
