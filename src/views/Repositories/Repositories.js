@@ -42,15 +42,17 @@ const Repositories = ({ token }) => {
 
 		return (
 			<div className="repository-content">
-				<div className="row m-0 d-flex align-items-center justify-content-center">
-					<div className="col-12 col-md-6 mt-2">
+				<div className="row m-0 d-flex align-items-center justify-content-between">
+					<div className="col col-md-6">
 						<p className="title">Repositories ({totalCount})</p>
 					</div>
-					<div className="col-12 col-md-3">
-						<Dropdown options={dropDownOptions} onChange={select => setDropdownOption(select)} value={selectedOption.label} placeholder="Select an option" />
-					</div>
-					<div className="col-12 col-md-3 mt-2 mt-md-0 pr-0">
-						<Dropdown options={dropDownDirection} onChange={select => setDirection(select)} value={selectedDirection.label} placeholder="Select an Direction" />
+					<div className="dropdown">
+						<div className="col">
+							<Dropdown options={dropDownOptions} onChange={select => setDropdownOption(select)} value={selectedOption.label} placeholder="Select an option" />
+						</div>
+						<div className="col">
+							<Dropdown options={dropDownDirection} onChange={select => setDirection(select)} value={selectedDirection.label} placeholder="Select an Direction" />
+						</div>
 					</div>
 				</div>
 
@@ -63,6 +65,7 @@ const Repositories = ({ token }) => {
 										<div className="details">
 											<h5 className="title">{repo.name}</h5>
 											{repo.isPrivate ? <i className="fa fa-lock"></i> : <i></i>}
+											{repo.isFork ? <div className="forked">Fork</div> : <i></i>}
 										</div>
 										<h6 className="text-muted text-owner">{repo.nameWithOwner}</h6>
 										<div className="languages">

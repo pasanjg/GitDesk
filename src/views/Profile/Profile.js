@@ -83,6 +83,7 @@ export default function Profile() {
 												<div className="details">
 													<h5 className="title">{repo.name}</h5>
 													{repo.isPrivate ? <i className="fa fa-lock"></i> : <i></i>}
+													{repo.isFork ? <div className="forked">Fork</div> : <i></i>}
 												</div>
 												<h6 className="text-muted text-owner">{repo.nameWithOwner}</h6>
 												<div className="languages">

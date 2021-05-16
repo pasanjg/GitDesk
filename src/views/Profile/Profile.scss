@@ -75,6 +75,15 @@
         .fa-lock {
           color: $default-gray;
         }
+
+        .forked {
+          color: $default-gray;
+          font-size: 12px;
+          margin-left: auto;
+          padding: 3px 5px;
+          border-radius: 5px;
+          background-color: $default-black-dark;
+        }
       }
 
       .languages {

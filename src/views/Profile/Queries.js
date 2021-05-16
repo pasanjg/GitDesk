@@ -22,6 +22,7 @@ export const FETCH_USER = gql`
       nodes {
         name
         isPrivate
+        isFork
         url
         nameWithOwner
         languages(first: 5) {

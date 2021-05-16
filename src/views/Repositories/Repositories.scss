@@ -15,13 +15,18 @@ $card-header-background: $default-black-light;
     font-weight: bold;
   }
 
+  .dropdown {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
   .Dropdown-root {
-    position: relative;
 
     .Dropdown-control {
       position: relative;
       overflow: hidden;
-      width: 200px;
+      max-width: 200px;
       background-color: $card-background;
       border-radius: 8px;
       box-sizing: border-box;
@@ -132,6 +137,15 @@ $card-header-background: $default-black-light;
 
       .fa-lock {
         color: $default-gray;
+      }
+
+      .forked {
+        color: $default-gray;
+        font-size: 12px;
+        margin-left: auto;
+        padding: 3px 5px;
+        border-radius: 5px;
+        background-color: $default-black-dark;
       }
     }
 
