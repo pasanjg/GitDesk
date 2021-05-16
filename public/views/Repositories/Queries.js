@@ -13,7 +13,7 @@ export const FETCH_REPOSITORIES = (field, dir) => gql`
                     isFork
                     isArchived
                     url
-                    descriptionHTML
+                    description
                     collaborators {
                         totalCount
                         nodes {

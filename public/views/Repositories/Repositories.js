@@ -62,18 +62,18 @@ const Repositories = ({ token }) => {
 								<div key={index} className="col-md-6">
 									<div className="repo-card">
 										<div className="details">
-											<h5>{repo.name}</h5>
+											<h5 className="title">{repo.name}</h5>
 											{repo.isPrivate ? <i className="fa fa-lock"></i> : <i></i>}
 										</div>
-										<h6 className="text-muted">{repo.nameWithOwner}</h6>
+										<h6 className="text-muted text-owner">{repo.nameWithOwner}</h6>
 										<div className="languages">
 											{
-												repo.languages.nodes.length > 0 ? 
+												repo.languages.nodes.length > 0 ?
 													repo.languages.nodes.map((language, index) => {
 														return (
 															<span key={index} style={{ backgroundColor: `${language.color}` }}>{language.name}</span>
 														);
-													}) : 
+													}) :
 													<span key={index} style={{ backgroundColor: "#313131" }}>N/A</span>
 											}
 										</div>
@@ -114,7 +114,9 @@ const Repositories = ({ token }) => {
 												{repo.openPullRequest.totalCount}
 											</div>
 										</div>
-										<div >{parse(repo.descriptionHTML === "<div></div>" ? "<div class='text-secondary mb-1'>No description</div>" : repo.descriptionHTML)}</div>
+										<div className="description">
+											{repo.description ? <p className="mb-1">{repo.description}</p> : <p className="text-secondary mb-1">No description</p>}
+										</div>
 										<div className="meta">
 											<div className="collaborators">
 												<span className="text-muted">Built by </span>
