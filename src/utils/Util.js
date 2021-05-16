@@ -18,20 +18,26 @@ export const clearLocalStorage = () => {
 }
 
 function appIsDev() {
-  const appIsDev = process.env.REACT_APP_IS_DEV;
+  const appIsDev = process.env.NODE_ENV;
   return appIsDev;
 };
 
+export const getGitHubOauthURL = () => {
+  if (appIsDev() === 'development')
+    return process.env.REACT_APP_OAUTH_DEV_URL;
+  else
+    return process.env.REACT_APP_OAUTH_PROD_URL;
+}
 
 export const getGitHubClientID = () => {
-  console.log("TEST: " + appIsDev());
-  if (appIsDev() === 'true')
+  if (appIsDev() === 'development')
     return process.env.REACT_APP_GITHUB_OAUTH_DEV_CLIENT_ID;
   else
     return process.env.REACT_APP_GITHUB_OAUTH_PROD_CLIENT_ID;
 }
+
 export const getGitHubClientSecret = () => {
-  if (appIsDev() === 'true')
+  if (appIsDev() === 'development')
     return process.env.REACT_APP_GITHUB_OAUTH_DEV_CLIENT_SECRET;
   else
     return process.env.REACT_APP_GITHUB_OAUTH_PROD_CLIENT_SECRET;

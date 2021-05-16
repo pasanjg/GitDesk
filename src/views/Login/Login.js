@@ -18,7 +18,6 @@ export class Login extends Component {
 		var token = getLocalStorage('token');
 
 		if (token !== null) {
-			console.log('Authorized');
 			window.location.href = "/dashboard"
 		}
 	}

@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import { Route, BrowserRouter as Router, Switch, Redirect } from 'react-router-dom';
+import { Route, BrowserRouter as Router, Switch } from 'react-router-dom';
 import { ApolloProvider } from '@apollo/react-hooks';
 import queryString from 'query-string';
 import axios from 'axios';
-import { getLocalStorage, setLocalStorage } from '../../utils/Util';
+import { getLocalStorage, setLocalStorage, getGitHubOauthURL } from '../../utils/Util';
 
 import Sidebar from '../../components/Sidebar/Sidebar';
 import About from '../About/About';
@@ -30,15 +30,11 @@ export class Home extends Component {
 	}
 
 	async getTokenDev() {
-
 		let params = queryString.parse(this.props.location.search);
 		let code = params.code;
 
 		if (code != null) {
-
-			console.log('Code:', code);
-
-			const apiURL = "/api/authenticate";
+			const apiURL = getGitHubOauthURL() + "/authenticate";
 			let token = "";
 
 			await axios({
@@ -51,7 +47,6 @@ export class Home extends Component {
 
 			}).then((response) => {
 				token = response.data.token;
-				console.log(token);
 				setLocalStorage('token', token);
 				window.location.href = '/dashboard';
 			});
@@ -61,7 +56,7 @@ export class Home extends Component {
 
 	render() {
 		const token = getLocalStorage('token');
-		console.log(token);
+
 		return (
 			<Router>
 				{

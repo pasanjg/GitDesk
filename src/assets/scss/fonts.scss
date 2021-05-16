@@ -1,0 +1,23 @@
+@font-face {
+  font-family: "SFProDisplay";
+  src: local("SFProDisplay"), url(../fonts/SFProDisplay-Regular.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "SFProDisplay";
+  font-style: bold;
+  font-weight: 700;
+  src: local("SFProDisplay"), url(../fonts/SFProDisplay-Bold.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Inter";
+  src: local("Inter"), url(../fonts/Inter-Regular.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Inter";
+  font-style: bold;
+  font-weight: 700;
+  src: local("Inter"), url(../fonts/Inter-Bold.ttf) format("truetype");
+}

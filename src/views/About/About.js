@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 import './About.scss';
 import appLogo from "../../assets/images/appLogo.svg";

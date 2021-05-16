@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { useQuery } from "@apollo/react-hooks";
-import parse from 'html-react-parser';
 import ReactTooltip from "react-tooltip";
 import moment from 'moment'
 import Dropdown from 'react-dropdown';

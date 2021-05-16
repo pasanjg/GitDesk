@@ -4,7 +4,6 @@ import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-d
 import './styles.scss';
 import Home from './views/Home/Home';
 import * as serviceWorker from './serviceWorker';
-import About from './views/About/About';
 import Login from './views/Login/Login';
 
 const routing = (
