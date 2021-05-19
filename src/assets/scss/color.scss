@@ -17,7 +17,7 @@ $merged: #6f42c1;
 // Functions
 
 @function transparency($color, $percentage) {
-	@return mix(white, $color, $percentage);
+	@return mix(black, $color, $percentage);
 }
 
 @mixin random-color() {

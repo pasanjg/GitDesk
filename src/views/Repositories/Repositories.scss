@@ -61,7 +61,7 @@ $card-header-background: $default-black-light;
     }
 
     .Dropdown-menu {
-      background-color: transparency($default-black, 5);
+      background-color: transparency($default-gray, 65);
       border-radius: 8px;
       box-shadow: 0 1px 0 rgba(0, 0, 0, 0.06);
       box-sizing: border-box;
@@ -96,12 +96,11 @@ $card-header-background: $default-black-light;
     }
 
     .Dropdown-option:hover {
-      background-color: transparency($default-black-light, 20);
+      background-color: transparency($default-gray, 50);
     }
 
     .Dropdown-option.is-selected {
-      background-color: #f2f9fc;
-      color: transparency($default-black-light, 20);
+      background-color: transparency($default-gray, 40);
     }
 
     .Dropdown-noresults {

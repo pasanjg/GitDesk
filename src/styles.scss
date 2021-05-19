@@ -16,11 +16,12 @@ a {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: transparency($default-black-dark, 20);
+  background: transparency($default-gray, 60);
+  transition: all 0.5s;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: $default-black-light;
+  background: transparency($default-gray, 50);
 }
 
 body {
