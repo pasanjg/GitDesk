@@ -12,11 +12,19 @@ export const FETCH_USER = gql`
     followers {
       totalCount
     }
-    following(first: 100) {
+    following {
       totalCount
     }
     starredRepositories {
       totalCount
+    }
+    repositories(first: 100, orderBy: {field: UPDATED_AT, direction: DESC}) {
+      nodes {
+        primaryLanguage {
+          name,
+          color
+        }
+      }
     }
     topRepositories(first: 6, orderBy: {field: STARGAZERS, direction: DESC}) {
       nodes {

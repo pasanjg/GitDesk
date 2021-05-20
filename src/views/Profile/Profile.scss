@@ -2,24 +2,113 @@
 
 .profile-content {
   min-height: 100vh;
-  padding: 80px 30px 10px;
+  padding: 50px 30px 10px;
   color: $white;
   background-color: $default-black-dark;
 
+  .profile-cover {
+    height: 300px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    background-color: $default-black;
+    position: relative;
+    transition: all 0.5s;
+
+    &:hover {
+      background-color: $default-black-light;
+    }
+
+    .cloud {
+      list-style: none;
+      height: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      position: absolute;
+      bottom: 0px;
+      overflow: hidden;
+      line-height: 2.5rem;
+
+      span[data-weight="1"] {
+        --size: 1;
+      }
+      span[data-weight="2"] {
+        --size: 2;
+      }
+      span[data-weight="3"] {
+        --size: 3;
+      }
+      span[data-weight="4"] {
+        --size: 4;
+      }
+      span[data-weight="5"] {
+        --size: 5;
+      }
+      span[data-weight="6"] {
+        --size: 6;
+      }
+      span[data-weight="7"] {
+        --size: 7;
+      }
+      span[data-weight="8"] {
+        --size: 8;
+      }
+      span[data-weight="9"] {
+        --size: 9;
+      }
+
+      span {
+        text-decoration: none;
+        position: relative;
+        padding: auto 5px;
+        margin: 0 5px;
+        border-radius: 10px;
+        font-size: calc(var(--size) * 6px);
+        color: transparency($white, 70);
+        opacity: calc((19 - (9 - var(--size))) / 19);
+        transition: all 0.5s;
+        cursor: pointer;
+        --size: attr(data-weight number, 2);
+
+        &:hover {
+          color: $white;
+          opacity: 1;
+        }
+      }
+    }
+  }
+
   .avatar-img {
-    height: 250px;
-    width: 250px;
-    border: 15px solid $white;
+    z-index: 9999999999;
+    height: 150px;
+    width: 150px;
+    margin-top: -100px;
+    border: 10px solid $white;
     border-radius: 15px;
     box-sizing: border-box;
+    position: relative;
   }
 
   .name {
     font-weight: bold;
   }
 
+  .bio {
+    width: 100%;
+    margin-top: 15px;
+    color: $default-gray;
+    text-align: center;
+    padding: 0 25%;
+    opacity: 0.5;
+  }
+
   .user-details {
     height: 85px;
+    max-width: 80%;
+    margin: auto;
     padding: 15px;
     display: flex;
     justify-content: space-evenly;
