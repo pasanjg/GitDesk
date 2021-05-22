@@ -175,8 +175,22 @@
         }
       }
 
+      .text-owner {
+        font-size: 15px;
+        margin-top: 5px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
       .languages {
         margin: 5px 0 !important;
+        white-space: nowrap;
+        overflow-x: scroll;
+
+        &::-webkit-scrollbar {
+          display: none;
+        }
 
         span {
           color: $default-light;
@@ -185,11 +199,6 @@
           margin-right: 5px;
           border-radius: 5px;
         }
-      }
-
-      .text-owner {
-        font-size: 15px;
-        margin-top: 5px;
       }
 
       .text-secondary {
@@ -213,6 +222,12 @@
 
         .collaborators {
           margin: 0;
+          white-space: nowrap;
+          overflow-x: scroll;
+
+          &::-webkit-scrollbar {
+            display: none;
+          }
 
           .text-muted {
             font-size: 12px;

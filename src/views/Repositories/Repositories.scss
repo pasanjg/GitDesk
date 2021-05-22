@@ -22,7 +22,6 @@ $card-header-background: $default-black-light;
   }
 
   .Dropdown-root {
-
     .Dropdown-control {
       position: relative;
       overflow: hidden;
@@ -151,10 +150,19 @@ $card-header-background: $default-black-light;
     .text-owner {
       font-size: 15px;
       margin-top: 5px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
 
     .languages {
       margin: 5px 0 !important;
+      white-space: nowrap;
+      overflow-x: scroll;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
 
       span {
         color: $default-light;
@@ -204,6 +212,12 @@ $card-header-background: $default-black-light;
 
       .collaborators {
         margin: 0;
+        white-space: nowrap;
+        overflow-x: scroll;
+
+        &::-webkit-scrollbar {
+          display: none;
+        }
 
         .text-muted {
           font-size: 12px;
