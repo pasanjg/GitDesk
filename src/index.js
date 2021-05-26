@@ -1,20 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
-import './styles.scss';
 import Home from './views/Home/Home';
 import * as serviceWorker from './serviceWorker';
 import Login from './views/Login/Login';
+import './styles.scss';
 
 const routing = (
-	<Router>
-		<Switch>
-			<Route path="/" component={Home} />
-			<Route exact path="/login" component={Login} />
-			<Route exact path="/github/callback" component={Home} />
-			<Redirect to="/login" />
-		</Switch>
-	</Router>
+  <Router>
+    <Switch>
+      <Route path="/" component={Home} />
+      <Route exact path="/login" component={Login} />
+      <Route exact path="/github/callback" component={Home} />
+      <Redirect to="/login" />
+    </Switch>
+  </Router>
 )
 
 ReactDOM.render(routing, document.getElementById('root'));

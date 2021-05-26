@@ -72,8 +72,8 @@ export class Home extends Component {
                     <Route path="/repositories" component={Repositories} />
                     <Route path="/profile" component={Profile} />
                     <Route path="/about" component={About} />
-                    <Redirect to="/dashboard" />
                   </ApolloProvider>
+                  <Redirect to="/dashboard" />
                 </Switch>
               </div>
             </>
@@ -84,4 +84,4 @@ export class Home extends Component {
   }
 }
 
-export default Home
+export default Home;
