@@ -10,4 +10,4 @@ const ErrorPage = (error)=>{
     </div>
 }
 
-export default ErrorPage
+export default ErrorPage;

@@ -1,6 +1,6 @@
 @import "~bootstrap/scss/bootstrap";
-@import "./assets/scss/color";
-@import "./assets/scss/fonts";
+@import "./color.scss";
+@import "./fonts.scss";
 
 a {
   text-decoration: none;
@@ -28,6 +28,12 @@ body {
   font-family: "Inter";
   box-shadow: none;
   outline: none;
+}
+
+a,
+a:hover {
+  text-decoration: none;
+  color: inherit;
 }
 
 //padding for page content

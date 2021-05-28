@@ -1,13 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
-import Home from './views/Home/Home';
+import Home from './views/Home/Home.js';
 import * as serviceWorker from './serviceWorker';
-import Login from './views/Login/Login';
-import './styles.scss';
+import Login from './views/Login/Login.js';
+
+import './assets/scss/styles.scss';
+
 
 const routing = (
-  <Router>
+  <Router basename="/">
     <Switch>
       <Route path="/" component={Home} />
       <Route exact path="/login" component={Login} />
@@ -15,7 +17,7 @@ const routing = (
       <Redirect to="/login" />
     </Switch>
   </Router>
-)
+);
 
 ReactDOM.render(routing, document.getElementById('root'));
 

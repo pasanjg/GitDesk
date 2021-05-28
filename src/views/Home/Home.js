@@ -5,17 +5,17 @@ import queryString from 'query-string';
 import axios from 'axios';
 import { getLocalStorage, setLocalStorage, getGitHubOauthURL } from '../../utils/Util';
 
-import Sidebar from '../../components/Sidebar/Sidebar';
-import About from '../About/About';
-import Dashboard from '../Dashboard/Dashboard';
-import Profile from '../Profile/Profile';
-import Repositories from '../Repositories/Repositories';
-import Login from '../Login/Login';
-import Header from '../../components/Header/Header';
+import Sidebar from '../../components/Sidebar/Sidebar.js';
+import About from '../About/About.js';
+import Dashboard from '../Dashboard/Dashboard.js';
+import Profile from '../Profile/Profile.js';
+import Repositories from '../Repositories/Repositories.js';
+import Login from '../Login/Login.js';
+import Search from '../Search/Search';
+import Header from '../../components/Header/Header.js';
 import './Home.scss';
 
 import Client from '../../utils/Client';
-import Search from '../Search/Search';
 
 export class Home extends Component {
 
@@ -51,7 +51,6 @@ export class Home extends Component {
         window.location.href = '/dashboard';
       });
     }
-
   }
 
   render() {

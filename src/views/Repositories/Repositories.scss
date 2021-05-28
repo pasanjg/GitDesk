@@ -6,108 +6,110 @@ $card-header-background: $default-black-light;
 
 .repository-content {
   min-height: 100vh;
-  padding: 30px 20px 15px;
+  padding: 30px 15px 15px;
   color: $white;
   background-color: $default-black-dark;
 
-  .title {
-    font-size: 25px;
-    font-weight: bold;
-  }
-
-  .dropdown {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .Dropdown-root {
-    .Dropdown-control {
-      position: relative;
-      overflow: hidden;
-      max-width: 200px;
-      background-color: $card-background;
-      border-radius: 8px;
-      box-sizing: border-box;
-      color: $default-light;
-      cursor: default;
-      outline: none;
-      padding: 8px 52px 8px 10px;
-      transition: all 200ms ease;
-    }
-
-    .Dropdown-control:hover {
-      box-shadow: 0 1px 0 rgba(0, 0, 0, 0.06);
-    }
-
-    .Dropdown-arrow {
-      border-color: #999 transparent transparent;
-      border-style: solid;
-      border-width: 5px 5px 0;
-      content: " ";
-      display: block;
-      height: 0;
-      margin-top: -ceil(2.5);
-      position: absolute;
-      right: 10px;
-      top: 14px;
-      width: 0;
-    }
-
-    .is-open .Dropdown-arrow {
-      border-color: transparent transparent #999;
-      border-width: 0 5px 5px;
-    }
-
-    .Dropdown-menu {
-      background-color: transparency($default-gray, 65);
-      border-radius: 8px;
-      box-shadow: 0 1px 0 rgba(0, 0, 0, 0.06);
-      box-sizing: border-box;
-      margin-top: -1px;
-      max-height: 200px;
-      overflow-y: auto;
-      position: absolute;
-      top: 100%;
-      width: 100%;
-      z-index: 1000;
-      -webkit-overflow-scrolling: touch;
-    }
-
-    .Dropdown-menu .Dropdown-group > .Dropdown-title {
-      padding: 8px 10px;
-      color: $default-light;
+  .title-div {
+    .title {
+      font-size: 25px;
       font-weight: bold;
-      text-transform: capitalize;
     }
 
-    .Dropdown-option {
-      box-sizing: border-box;
-      color: $default-light;
-      cursor: pointer;
-      display: block;
-      padding: 8px 10px;
+    .dropdown {
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
-    .Dropdown-option:last-child {
-      border-bottom-right-radius: 2px;
-      border-bottom-left-radius: 2px;
-    }
+    .Dropdown-root {
+      .Dropdown-control {
+        position: relative;
+        overflow: hidden;
+        max-width: 200px;
+        background-color: $card-background;
+        border-radius: 8px;
+        box-sizing: border-box;
+        color: $default-light;
+        cursor: default;
+        outline: none;
+        padding: 8px 52px 8px 10px;
+        transition: all 200ms ease;
+      }
 
-    .Dropdown-option:hover {
-      background-color: transparency($default-gray, 50);
-    }
+      .Dropdown-control:hover {
+        box-shadow: 0 1px 0 rgba(0, 0, 0, 0.06);
+      }
 
-    .Dropdown-option.is-selected {
-      background-color: transparency($default-gray, 40);
-    }
+      .Dropdown-arrow {
+        border-color: #999 transparent transparent;
+        border-style: solid;
+        border-width: 5px 5px 0;
+        content: " ";
+        display: block;
+        height: 0;
+        margin-top: -ceil(2.5);
+        position: absolute;
+        right: 10px;
+        top: 14px;
+        width: 0;
+      }
 
-    .Dropdown-noresults {
-      box-sizing: border-box;
-      color: #ccc;
-      cursor: default;
-      display: block;
-      padding: 8px 10px;
+      .is-open .Dropdown-arrow {
+        border-color: transparent transparent #999;
+        border-width: 0 5px 5px;
+      }
+
+      .Dropdown-menu {
+        background-color: transparency($default-gray, 65);
+        border-radius: 8px;
+        box-shadow: 0 1px 0 rgba(0, 0, 0, 0.06);
+        box-sizing: border-box;
+        margin-top: -1px;
+        max-height: 200px;
+        overflow-y: auto;
+        position: absolute;
+        top: 100%;
+        width: 100%;
+        z-index: 1000;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .Dropdown-menu .Dropdown-group > .Dropdown-title {
+        padding: 8px 10px;
+        color: $default-light;
+        font-weight: bold;
+        text-transform: capitalize;
+      }
+
+      .Dropdown-option {
+        box-sizing: border-box;
+        color: $default-light;
+        cursor: pointer;
+        display: block;
+        padding: 8px 10px;
+      }
+
+      .Dropdown-option:last-child {
+        border-bottom-right-radius: 2px;
+        border-bottom-left-radius: 2px;
+      }
+
+      .Dropdown-option:hover {
+        background-color: transparency($default-gray, 50);
+      }
+
+      .Dropdown-option.is-selected {
+        background-color: transparency($default-gray, 40);
+      }
+
+      .Dropdown-noresults {
+        box-sizing: border-box;
+        color: #ccc;
+        cursor: default;
+        display: block;
+        padding: 8px 10px;
+      }
     }
   }
 

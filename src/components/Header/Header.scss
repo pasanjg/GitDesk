@@ -94,16 +94,18 @@
 	.toggle-mode {
 		display: flex;
 		align-items: center;
-		margin-left: 40px;
 
-		.icon {
+		.mode-icon {
 			height: 40px;
 			width: 50px;
-			margin-right: 15px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
 			padding: 10px;
 			border-radius: 8px;
 			color: $white;
 			background-color: $default-black;
+      cursor: pointer;
 			transition: all 0.2s;
 
 			&:hover {
