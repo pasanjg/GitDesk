@@ -6,14 +6,15 @@ import * as serviceWorker from './serviceWorker';
 import Login from './views/Login/Login.js';
 
 import './assets/scss/styles.scss';
+import OAuth from "./views/OAuth/OAuth.js";
 
 
 const routing = (
-  <Router basename="/">
+  <Router>
     <Switch>
+      <Route path="/login" component={Login} />
+      <Route path="/github/callback" component={OAuth} />
       <Route path="/" component={Home} />
-      <Route exact path="/login" component={Login} />
-      <Route exact path="/github/callback" component={Home} />
       <Redirect to="/login" />
     </Switch>
   </Router>

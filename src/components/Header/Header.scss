@@ -1,158 +1,158 @@
 @import "../../assets/scss/color.scss";
 
 .header-content {
-	width: 100vw;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	position: fixed;
-	z-index: 2;
-	padding: 20px 38px 20px 20px;
-	background-color: $default-black-light;
+  width: 100vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  z-index: 2;
+  padding: 20px 38px 20px 20px;
+  background-color: $default-black-light;
 
-	.logo {
-		height: 20px;
-		margin-right: 40px;
-		padding: auto;
-		color: $white;
-		display: flex;
-		flex-direction: row;
-		align-items: center;
+  .logo {
+    height: 20px;
+    margin-right: 40px;
+    padding: auto;
+    color: $white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 
-		.logo-title {
-			font-size: 26px;
-			font-weight: bold;
-			color: $white;
-			margin-left: 15px;
+    .logo-title {
+      font-size: 26px;
+      font-weight: bold;
+      color: $white;
+      margin-left: 15px;
 
-			.version {
-				font-size: 8px;
-				margin-left: 8px;
-				margin-bottom: auto;
-			}
-		}
-	}
+      .version {
+        font-size: 8px;
+        margin-left: 8px;
+        margin-bottom: auto;
+      }
+    }
+  }
 
-	.search {
-		.search-input {
-			width: 315px;
-			height: 40px;
-			border-radius: 8px;
-			padding: 0 15px;
-			color: $white;
-			background-color: transparency($default-black-light, 20);
-			border: none;
+  .search {
+    .search-input {
+      width: 315px;
+      height: 40px;
+      border-radius: 8px;
+      padding: 0 15px;
+      color: $white;
+      background-color: transparency($default-black-light, 20);
+      border: none;
 
-			&:focus {
-				outline: none;
-			}
+      &:focus {
+        outline: none;
+      }
 
-			&::-webkit-search-cancel-button {
-				-webkit-appearance: none;
-				height: 1em;
-				width: 1em;
-				border-radius: 50em;
-				background: url(https://pro.fontawesome.com/releases/v5.10.0/svgs/solid/times-circle.svg) no-repeat 50% 50%;
-				background-size: contain;
-				opacity: 0.5;
-				pointer-events: none;
-				filter: invert(1);
-			}
+      &::-webkit-search-cancel-button {
+        -webkit-appearance: none;
+        height: 1em;
+        width: 1em;
+        border-radius: 50em;
+        background: url(https://pro.fontawesome.com/releases/v5.10.0/svgs/solid/times-circle.svg) no-repeat 50% 50%;
+        background-size: contain;
+        opacity: 0.5;
+        pointer-events: none;
+        filter: invert(1);
+      }
 
-			&:focus::-webkit-search-cancel-button {
-				opacity: .3;
-				pointer-events: all;
-			}
-		}
+      &:focus::-webkit-search-cancel-button {
+        opacity: 0.3;
+        pointer-events: all;
+      }
+    }
 
-		.search-btn {
-			width: 60px;
-			height: 40px;
-			margin-left: 15px;
-			border-radius: 8px;
-			font-weight: bold;
-			color: $default-gray;
-			background-color: $default-black;
-			transition: all 0.2s;
+    .search-btn {
+      width: 60px;
+      height: 40px;
+      margin-left: 15px;
+      border-radius: 8px;
+      font-weight: bold;
+      color: $default-gray;
+      background-color: $default-black;
+      transition: all 0.2s;
 
-			&:hover {
-				background-color: $default-black-dark;
-			}
+      &:hover {
+        background-color: $default-black-dark;
+      }
 
-			&:all {
-				outline: none;
-				border: none;
-				box-shadow: none;
-			}
-		}
-	}
+      &:all {
+        outline: none;
+        border: none;
+        box-shadow: none;
+      }
+    }
+  }
 
-	.search-filter {
-		margin: 0 auto;
-	}
+  .search-filter {
+    margin: 0 auto;
+  }
 
-	.toggle-mode {
-		display: flex;
-		align-items: center;
+  .toggle-mode {
+    display: flex;
+    align-items: center;
 
-		.mode-icon {
-			height: 40px;
-			width: 50px;
+    .mode-icon {
+      height: 40px;
+      width: 50px;
       display: flex;
       justify-content: center;
       align-items: center;
-			padding: 10px;
-			border-radius: 8px;
-			color: $white;
-			background-color: $default-black;
+      padding: 10px;
+      border-radius: 8px;
+      color: $white;
+      background-color: $default-black;
       cursor: pointer;
-			transition: all 0.2s;
+      transition: all 0.2s;
 
-			&:hover {
-				background-color: $default-black-dark;
-			}
-		}
+      &:hover {
+        background-color: $default-black-dark;
+      }
+    }
 
-		#switch {
-			height: 0;
-			width: 0;
-			visibility: hidden;
-		}
+    #switch {
+      height: 0;
+      width: 0;
+      visibility: hidden;
+    }
 
-		label {
-			cursor: pointer;
-			text-indent: -9999px;
-			width: 60px;
-			height: 30px;
-			margin: 0;
-			background-color: transparency($default-black-light, 20);
-			border-radius: 100px;
-			position: relative;
+    label {
+      cursor: pointer;
+      text-indent: -9999px;
+      width: 60px;
+      height: 30px;
+      margin: 0;
+      background-color: transparency($default-black-light, 20);
+      border-radius: 100px;
+      position: relative;
 
-			&:after {
-				content: "";
-				position: absolute;
-				top: 5px;
-				left: 5px;
-				width: 20px;
-				height: 20px;
-				background: $white;
-				border-radius: 90px;
-				transition: 0.5s;
-			}
+      &:after {
+        content: "";
+        position: absolute;
+        top: 5px;
+        left: 5px;
+        width: 20px;
+        height: 20px;
+        background: $white;
+        border-radius: 90px;
+        transition: 0.5s;
+      }
 
-			&:active:after {
-				width: 40px;
-			}
-		}
+      &:active:after {
+        width: 40px;
+      }
+    }
 
-		input:checked + label {
-			background: $default-blue;
+    input:checked + label {
+      background: $default-blue;
 
-			&:after {
-				left: calc(100% - 5px);
-				transform: translateX(-100%);
-			}
-		}
-	}
+      &:after {
+        left: calc(100% - 5px);
+        transform: translateX(-100%);
+      }
+    }
+  }
 }

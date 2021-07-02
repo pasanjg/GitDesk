@@ -1,49 +1,55 @@
 @import "../../assets/scss/color.scss";
 
 .login-content {
-	display: grid;
-	height: 100vh;
-	place-items: center;
-	background-color: $default-black-dark;
+  display: grid;
+  height: 100vh;
+  place-items: center;
+  background-color: $default-black-dark;
 
-	&::before {
-		content: "";
-		position: fixed;
-		height: 100vh;
-		width: 100vw;
-		background-image: url(../../assets/images/gh-light-glow.svg);
-		background-position: center;
-		background-repeat: no-repeat;
-		background-size: cover;
-		filter: blur(50px);
-		filter: opacity(0.6);
-	}
+  &::before {
+    content: "";
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    background-image: url(../../assets/images/gh-light-glow.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: blur(50px);
+    filter: opacity(0.6);
+  }
 
-	.main {
-		height: 450px;
-		width: 350px;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: space-around;
-		border: 1px solid $default-black;
-		border-radius: 10px;
-		background-color: $default-black;
-		transition: all 0.2s;
-		filter: blur(0) !important;
+  .main {
+    height: 450px;
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    border: 1px solid $default-black;
+    border-radius: 10px;
+    background-color: $default-black;
+    transition: all 0.2s;
+    filter: blur(0) !important;
 
-		&:hover {
-			background-color: $default-black-light;
-		}
+    &:hover {
+      background-color: $default-black-light;
+    }
 
-		.login-btn {
-			color: $white;
-			background-color: $default-dark-green;
-			transition: all 0.2s;
+    code {
+      width: 90%;
+      font-size: 16px;
+      line-height: 1.5rem;
+    }
 
-			&:hover {
-				background-color: $default-light-green;
-			}
-		}
-	}
+    .login-btn {
+      color: $white;
+      background-color: $default-dark-green;
+      transition: all 0.2s;
+
+      &:hover {
+        background-color: $default-light-green;
+      }
+    }
+  }
 }

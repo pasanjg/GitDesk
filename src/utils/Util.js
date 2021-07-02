@@ -22,7 +22,7 @@ function appIsDev() {
   return appIsDev;
 };
 
-export const getGitHubOauthURL = () => {
+export const getGitHubOAuthURL = () => {
   if (appIsDev() === 'development')
     return process.env.REACT_APP_OAUTH_DEV_URL;
   else
