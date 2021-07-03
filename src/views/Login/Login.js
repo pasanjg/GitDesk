@@ -1,16 +1,29 @@
 import React, { Component } from "react";
 import { getGitHubClientID, getLocalStorage } from "../../utils/Util";
-import githubLogo from '../../assets/images/githubLogo.svg';
+import githubLogoWhite from '../../assets/images/githubLogoWhite.svg';
+import githubLogoBlack from '../../assets/images/githubLogoBlack.svg';
 import "./Login.scss";
 
 export class Login extends Component {
 
   constructor() {
     super();
+
+    this.state = {
+      ghIcon: githubLogoWhite,
+    };
+
     this.checkAuthentication.bind(this);
   }
 
   componentDidMount() {
+    if (localStorage.getItem("mode") === "dark") {
+      document.body.classList.toggle('dark');
+      this.setState({ghIcon: githubLogoWhite});
+    } else {
+      this.setState({ghIcon: githubLogoBlack});
+    }
+
     this.checkAuthentication();
   }
 
@@ -27,8 +40,8 @@ export class Login extends Component {
 
     return (
       <div className="login-content">
-        <div className="main">
-          <img src={githubLogo} alt="logo" width="150" />
+        <div className="card main">
+          <img src={this.state.ghIcon} alt="logo" width="150" />
           <code className="text-center">Just Login. We'll callback you. <br /> It's a promise!</code>
           <button className="btn login-btn"
             onClick={e => {

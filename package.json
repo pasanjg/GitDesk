@@ -1,7 +1,7 @@
 {
   "name": "gitdesk",
   "productName": "GitDesk",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "An React App for GitHub",
   "author": {
     "name": "Pasan Godamune"

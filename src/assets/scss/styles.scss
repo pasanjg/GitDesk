@@ -1,6 +1,10 @@
 @import "~bootstrap/scss/bootstrap";
-@import "./color.scss";
+@import "./variables.scss";
 @import "./fonts.scss";
+
+html {
+  font-size: 16px;
+}
 
 a {
   text-decoration: none;
@@ -12,22 +16,25 @@ a {
 }
 
 ::-webkit-scrollbar-track {
-  background: $default-black-dark;
+  background: var(--color-scrollbar-track);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: transparency($default-gray, 60);
-  transition: all 0.5s;
+  background: var(--color-scrollbar-thumb);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: transparency($default-gray, 50);
+  background: var(--color-scrollbar-thumb-hover);
 }
 
 body {
   font-family: "Inter";
   box-shadow: none;
   outline: none;
+  color: var(--color-default-font);
+  background-color: var(--color-default-background);
+  transition: color 0.3s ease;
+  transition: background-color 0.3s ease;
 }
 
 a,
@@ -39,4 +46,18 @@ a:hover {
 //padding for page content
 .content-padding {
   padding: 5px 10px 5px 10px;
+}
+
+.card {
+  border: 0 transparent;
+  border-radius: 10px;
+  padding: 15px 18px;
+  border: 1px;
+  border-radius: 10px;
+  background-color: var(--color-card-background);
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: var(--color-card-background-hover);
+  }
 }

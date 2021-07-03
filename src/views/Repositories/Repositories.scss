@@ -1,14 +1,10 @@
-@import "../../assets/scss/color.scss";
+@import "../../assets/scss/variables.scss";
 
 $card-background: #1a1a1a;
-$pill-background: #1a1a1a;
-$card-header-background: $default-black-light;
 
 .repository-content {
   min-height: 100vh;
   padding: 30px 15px 15px;
-  color: $white;
-  background-color: $default-black-dark;
 
   .title-div {
     .title {
@@ -27,14 +23,13 @@ $card-header-background: $default-black-light;
         position: relative;
         overflow: hidden;
         max-width: 200px;
-        background-color: $card-background;
+        background-color: var(--color-header-background);
         border-radius: 8px;
         box-sizing: border-box;
-        color: $default-light;
+        color: var(--color-default-font);
         cursor: default;
         outline: none;
         padding: 8px 52px 8px 10px;
-        transition: all 200ms ease;
       }
 
       .Dropdown-control:hover {
@@ -42,7 +37,7 @@ $card-header-background: $default-black-light;
       }
 
       .Dropdown-arrow {
-        border-color: #999 transparent transparent;
+        border-color: var(--color-default-font) transparent transparent;
         border-style: solid;
         border-width: 5px 5px 0;
         content: " ";
@@ -61,7 +56,7 @@ $card-header-background: $default-black-light;
       }
 
       .Dropdown-menu {
-        background-color: transparency($default-gray, 65);
+        background-color: var(--color-header-background);
         border-radius: 8px;
         box-shadow: 0 1px 0 rgba(0, 0, 0, 0.06);
         box-sizing: border-box;
@@ -77,14 +72,14 @@ $card-header-background: $default-black-light;
 
       .Dropdown-menu .Dropdown-group > .Dropdown-title {
         padding: 8px 10px;
-        color: $default-light;
+        color: var(--color-default-font);
         font-weight: bold;
         text-transform: capitalize;
       }
 
       .Dropdown-option {
         box-sizing: border-box;
-        color: $default-light;
+        color: var(--color-default-font);
         cursor: pointer;
         display: block;
         padding: 8px 10px;
@@ -96,11 +91,11 @@ $card-header-background: $default-black-light;
       }
 
       .Dropdown-option:hover {
-        background-color: transparency($default-gray, 50);
+        background-color: var(--color-header-button-background);
       }
 
       .Dropdown-option.is-selected {
-        background-color: transparency($default-gray, 40);
+        background-color: var(--color-header-button-background);
       }
 
       .Dropdown-noresults {
@@ -117,10 +112,6 @@ $card-header-background: $default-black-light;
     min-height: 200px;
     margin: 15px 0;
     padding: 15px 18px;
-    border: 1px;
-    border-radius: 8px;
-    background-color: $default-black;
-    transition: all 0.5s;
 
     .details {
       display: flex;
@@ -136,16 +127,16 @@ $card-header-background: $default-black-light;
       }
 
       .fa-lock {
-        color: $default-gray;
+        color: var(--color-default-font);
       }
 
       .forked {
-        color: $default-gray;
+        color: var(--color-default-font);
         font-size: 12px;
         margin-left: auto;
         padding: 3px 5px;
         border-radius: 5px;
-        background-color: $default-black-dark;
+        background-color: var(--color-fork-label);
       }
     }
 
@@ -167,11 +158,12 @@ $card-header-background: $default-black-light;
       }
 
       span {
-        color: $default-light;
+        color: $gray;
         font-size: 12px;
         padding: 3px 5px;
         margin-right: 5px;
         border-radius: 5px;
+        color: $white;
       }
     }
 
@@ -183,7 +175,7 @@ $card-header-background: $default-black-light;
         margin-right: 10px;
 
         .gh-icon {
-          fill: $white;
+          fill: var(--color-default-font);
         }
       }
     }
@@ -233,10 +225,6 @@ $card-header-background: $default-black-light;
           margin-right: 5px;
         }
       }
-    }
-
-    &:hover {
-      background-color: $default-black-light;
     }
   }
 }

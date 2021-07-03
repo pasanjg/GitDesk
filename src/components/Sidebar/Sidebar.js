@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import { clearLocalStorage } from '../../utils/Util';
 import $ from 'jquery';
 
 import "./Sidebar.scss";
@@ -18,7 +17,7 @@ export class Sidebar extends Component {
 
   logout = (e) => {
     e.preventDefault()
-    clearLocalStorage()
+    localStorage.removeItem('token');
     window.location.href = "/";
   }
 

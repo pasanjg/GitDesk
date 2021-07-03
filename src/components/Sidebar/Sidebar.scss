@@ -1,110 +1,79 @@
-@import "../../assets/scss/color.scss";
+@import "../../assets/scss/variables.scss";
 
 .sidebar {
-	height: 100%;
-	width: 215px;
-	position: fixed;
-	z-index: 1;
-	left: 0;
-	overflow-x: hidden;
-	background-color: $default-black;
-	// transition: all 0.2s;
+  height: 100%;
+  width: 215px;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  overflow-x: hidden;
+  background-color: var(--color-sidebar-background);
 
-	.nav-list {
-		list-style: none;
-		margin-top: 35px;
-		padding: 0 12px;
-		display: flex;
-		flex-direction: column;
-		justify-content: flex-start;
-		align-items: flex-start;
+  .nav-list {
+    list-style: none;
+    margin-top: 35px;
+    padding: 0 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
 
-		.logo {
-			margin-bottom: 50px;
-			color: $white;
-			display: flex;
+    .item,
+    .github {
+      height: 50px;
+      width: 190px;
+      margin: 5px 0;
+      font-size: 20px;
+      color: var(--color-default-font);
+      border-radius: 10px;
+      padding: 10px 12px;
+      cursor: pointer;
 
-			.logo-title {
-				font-size: 26px;
-				font-weight: bold;
-				color: $white;
-				margin-left: 15px;
+      .nav-title {
+        margin: 0 15px;
+        font-size: 18px;
+        cursor: pointer;
+      }
 
-				.version {
-					font-size: 10px;
-					margin-left: 8px;
-					margin-bottom: auto;
-				}
-			}
-		}
+      &:hover,
+      &.active {
+        background-color: var(--color-sidebar-nav-active);
+      }
+    }
 
-		.item,
-		.github {
-			height: 50px;
-			width: 190px;
-			margin: 5px 0;
-			font-size: 20px;
-			color: $default-gray;
-			border-radius: 10px;
-			padding: 10px 12px;
-			background-color: $default-black;
-			cursor: pointer;
-			transition: 0.2s all;
+    .github {
+      font-size: 20px;
+      position: absolute;
+      bottom: 100px;
 
-			a {
-				color: $default-gray;
-				display: block;
-			}
-
-			.nav-title {
-				margin: 0 15px;
-				font-size: 18px;
-				cursor: pointer;
-			}
-
-			&:hover,
-			&.active {
-				background-color: $default-black-light;
-
-				a {
-					color: $white !important;
-				}
-			}
-		}
-
-		.github {
-			font-size: 20px;
-			position: absolute;
-			bottom: 100px;
-
-			.item-data {
-				color: $default-gray;
-			}
-		}
-	}
+      .item-data {
+        color: $gray;
+      }
+    }
+  }
 }
 
 @media screen and (max-width: 1200px) {
-	.sidebar {
-		width: 70px;
+  .sidebar {
+    width: 70px;
 
-		.nav-list {
-			margin-top: 22px;
+    .nav-list {
+      margin-top: 22px;
 
-			.logo {
-				margin-bottom: 58px;
-			}
+      .logo {
+        margin-bottom: 58px;
+      }
 
-			.item,
-			.github {
-				width: 48px !important;
-			}
+      .item,
+      .github {
+        width: 48px !important;
+      }
 
-			.nav-title,
-			.logo-title,
-			.version {
-				display: none;
-			}
-		}
-	}
+      .nav-title,
+      .logo-title,
+      .version {
+        display: none;
+      }
+    }
+  }
 }

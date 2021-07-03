@@ -13,7 +13,9 @@ export default function Dashboard() {
 
   const { data, loading, error } = useQuery(FETCH_ACTIVITY);
   if (loading)
-    return <Loader />;
+    return <div className="loading">
+      <Loader />
+    </div>;
   else if (error)
     return <ErrorPage error={error} />;
   else {
@@ -30,7 +32,7 @@ export default function Dashboard() {
         <div className="row">
 
           <div className="col-lg-3 col-md-6 col-sm-6">
-            <div className="dash-card">
+            <div className="card dash-card">
               <div className="stats">
                 <div className="title">Contributions</div>
                 <div className="value">
@@ -45,7 +47,7 @@ export default function Dashboard() {
           </div>
 
           <div className="col-lg-3 col-md-6 col-sm-6">
-            <div className="dash-card">
+            <div className="card dash-card">
               <div className="stats">
                 <label className="title">Issues</label>
                 <span className="value">
@@ -60,7 +62,7 @@ export default function Dashboard() {
           </div>
 
           <div className="col-lg-3 col-md-6 col-sm-6">
-            <div className="dash-card">
+            <div className="card dash-card">
               <div className="stats">
                 <label className="title">Pull Requests</label>
                 <span className="value">
@@ -75,7 +77,7 @@ export default function Dashboard() {
           </div>
 
           <div className="col-lg-3 col-md-6 col-sm-6">
-            <div className="dash-card">
+            <div className="card dash-card">
               <div className="stats">
                 <label className="title">Gists</label>
                 <span className="value">
@@ -95,7 +97,7 @@ export default function Dashboard() {
           <div className="row">
 
             <div className="col-md-12">
-              <div className="stat-card">
+              <div className="card stat-card">
                 <p>Last 10 Issues</p>
                 {
                   issues.totalCount === 0 ? <span><i className="text-muted">No Issues</i></span> :
@@ -133,7 +135,7 @@ export default function Dashboard() {
             </div>
 
             <div className="col-md-12">
-              <div className="stat-card">
+              <div className="card stat-card">
                 <p>Last 10 Pull Requests</p>
                 {
                   pullRequests.totalCount === 0 ? <span><i className="text-muted">No Pull Requests</i></span> :
@@ -171,7 +173,7 @@ export default function Dashboard() {
             </div>
 
             <div className="col-md-12">
-              <div className="stat-card">
+              <div className="card stat-card">
                 <p>Last 10 Gists</p>
                 {
                   gists.totalCount === 0 ? <span><i className="text-muted">No Gists</i></span> :

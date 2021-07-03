@@ -15,7 +15,9 @@ export default function Profile() {
   // const [isPrimaryLangHover, setIsPrimaryLangHover] = useState(-1);
 
   if (loading)
-    return <Loader />;
+    return <div className="loading">
+      <Loader />
+    </div>;
   else if (error)
     return <ErrorPage error={error} />;
   else {
@@ -27,7 +29,7 @@ export default function Profile() {
     return (
       <div className="profile-content">
         <div className="container-fluid px-0 text-center">
-          <div className="profile-cover">
+          <div className="card profile-cover">
             <div className="cloud">
               {
                 repositories.length > 0 &&
@@ -53,16 +55,18 @@ export default function Profile() {
               }
             </div>
           </div>
-          <img className="avatar-img" src={data.viewer.avatarUrl} alt="avatar" />
+          <div>
+            <img className="avatar" src={data.viewer.avatarUrl} alt="avatar" />
+          </div>
         </div>
         <div className="col-12 text-center">
           <h1 className="name mt-3">{data.viewer.name}</h1>
           <h4>@{data.viewer.login}</h4>
-          <div className="bio">
+          <div className="bio text-muted">
             <p>{data.viewer.bio}</p>
           </div>
         </div>
-        <div className="col-12 user-details mt-4">
+        <div className="card col-12 user-details mt-4">
           <div className="stats">
             <span className="number font-weight-bold">
               <NumberFormat value={data.viewer.followers.totalCount} displayType={'text'} thousandSeparator={true} />
@@ -114,7 +118,7 @@ export default function Profile() {
                 topRepositories.map((repo, index) => {
                   return (
                     <div key={index} className="col-md-6">
-                      <div className="repo-card">
+                      <div className="card repo-card">
                         <div className="details">
                           <h5 className="title">{repo.name}</h5>
                           {repo.isPrivate ? <i className="fa fa-lock"></i> : <i></i>}

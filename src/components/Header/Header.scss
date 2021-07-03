@@ -1,4 +1,4 @@
-@import "../../assets/scss/color.scss";
+@import "../../assets/scss/variables.scss";
 
 .header-content {
   width: 100vw;
@@ -8,13 +8,12 @@
   position: fixed;
   z-index: 2;
   padding: 20px 38px 20px 20px;
-  background-color: $default-black-light;
+  background-color: var(--color-header-background);
 
   .logo {
     height: 20px;
     margin-right: 40px;
     padding: auto;
-    color: $white;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -22,7 +21,7 @@
     .logo-title {
       font-size: 26px;
       font-weight: bold;
-      color: $white;
+      color: var(--color-default-font);
       margin-left: 15px;
 
       .version {
@@ -39,8 +38,8 @@
       height: 40px;
       border-radius: 8px;
       padding: 0 15px;
-      color: $white;
-      background-color: transparency($default-black-light, 20);
+      color: var(--color-default-font);
+      background-color: var(--color-header-button-background);
       border: none;
 
       &:focus {
@@ -56,7 +55,7 @@
         background-size: contain;
         opacity: 0.5;
         pointer-events: none;
-        filter: invert(1);
+        filter: invert(0);
       }
 
       &:focus::-webkit-search-cancel-button {
@@ -71,12 +70,11 @@
       margin-left: 15px;
       border-radius: 8px;
       font-weight: bold;
-      color: $default-gray;
-      background-color: $default-black;
-      transition: all 0.2s;
+      color: var(--color-default-font);
+      background-color: var(--color-header-button-background);
 
       &:hover {
-        background-color: $default-black-dark;
+        background-color: var(--color-header-button-hover);
       }
 
       &:all {
@@ -103,55 +101,12 @@
       align-items: center;
       padding: 10px;
       border-radius: 8px;
-      color: $white;
-      background-color: $default-black;
+      color: var(--color-default-font);
       cursor: pointer;
-      transition: all 0.2s;
+      background-color: var(--color-header-button-background);
 
       &:hover {
-        background-color: $default-black-dark;
-      }
-    }
-
-    #switch {
-      height: 0;
-      width: 0;
-      visibility: hidden;
-    }
-
-    label {
-      cursor: pointer;
-      text-indent: -9999px;
-      width: 60px;
-      height: 30px;
-      margin: 0;
-      background-color: transparency($default-black-light, 20);
-      border-radius: 100px;
-      position: relative;
-
-      &:after {
-        content: "";
-        position: absolute;
-        top: 5px;
-        left: 5px;
-        width: 20px;
-        height: 20px;
-        background: $white;
-        border-radius: 90px;
-        transition: 0.5s;
-      }
-
-      &:active:after {
-        width: 40px;
-      }
-    }
-
-    input:checked + label {
-      background: $default-blue;
-
-      &:after {
-        left: calc(100% - 5px);
-        transform: translateX(-100%);
+        background-color: var(--color-header-button-hover);
       }
     }
   }

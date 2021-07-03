@@ -1,0 +1,70 @@
+// main colors
+$light-green: #40c463;
+$dark-green: #30a14e;
+$open: #28a745;
+$closed: #d73a49;
+$merged: #6f42c1;
+$white: #ffffff;
+$black: #000000;
+$gray: #bdbdbd;
+
+// Dark Theme
+$primary-dark: #2b2b2b;
+$primary-dark-light: #313131;
+$primary-dark-darker: #242424;
+$default-light: #edf5fc;
+
+$dark-background: $primary-dark-darker;
+
+// Light Theme
+$primary-light: #e4e6eb;
+$primary-light-lighter: #f0f2f5;
+$primary-light-dark: #e2e4e7;
+$primary-light-darker: #d2d4d8;
+$gray: #bdbdbd;
+$default-light-font: #333333;
+
+$light-background: $primary-light-lighter;
+$light-header-background: $white;
+
+:root {
+  --color-default-font: #{$default-light-font};
+  --color-default-background: #{$light-background};
+  --color-hr: #{$light-background};
+  --color-gh-number: #{darken($gray, 20%)};
+  --color-fork-label: #{$primary-light-darker};
+  --color-card-background: #{$white};
+  --color-card-background-hover: #{$primary-light-dark};
+  --color-card-item-hover: #{$primary-light-lighter};
+  --color-cloud-font: #{lighten($black, 70%)};
+  --color-cloud-font-hover: #{lighten($black, 40%)};
+  --color-sidebar-background: #{$white};
+  --color-sidebar-nav-active: #{$light-background};
+  --color-header-button-background: #{$primary-light-lighter};
+  --color-header-button-hover: #{$primary-light-darker};
+  --color-header-background: #{$primary-light-dark};
+  --color-scrollbar-track: #{$light-background};
+  --color-scrollbar-thumb: #{darken($primary-light-dark, 10%)};
+  --color-scrollbar-thumb-hover: #{darken($primary-light-dark, 20%)};
+}
+
+.dark {
+  --color-default-font: #{$white};
+  --color-default-background: #{$dark-background};
+  --color-hr: #{darken($gray, 50%)};
+  --color-gh-number: #{$gray};
+  --color-fork-label: #{$primary-dark-darker};
+  --color-card-background: #{$primary-dark};
+  --color-card-background-hover: #{$primary-dark-light};
+  --color-card-item-hover: #{$primary-dark-light};
+  --color-cloud-font: #{darken($white, 70%)};
+  --color-cloud-font-hover: #{$white};
+  --color-sidebar-background: #{$primary-dark};
+  --color-sidebar-nav-active: #{$primary-dark-light};
+  --color-header-button-background: #{$primary-dark};
+  --color-header-button-hover: #{$primary-dark-darker};
+  --color-header-background: #{$primary-dark-light};
+  --color-scrollbar-track: #{$dark-background};
+  --color-scrollbar-thumb: #{lighten($primary-dark, 10%)};
+  --color-scrollbar-thumb-hover: #{lighten($primary-dark, 20%)};
+}

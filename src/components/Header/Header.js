@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { getLocalStorage, setLocalStorage } from '../../utils/Util';
 
 import appLogo from "../../assets/images/appLogo.svg";
 import packageJson from '../../../package.json';
@@ -13,14 +12,16 @@ export default function Header() {
   const darkIcon = "fa-moon";
 
   const [search, setSearch] = useState("");
-  const [iconClass, setIconClass] = useState(lightIcon)
+  const iconClass = localStorage.getItem("mode") === "dark" ? darkIcon : lightIcon;
 
   useEffect(() => {
-    getLocalStorage("mode") === "dark" ? setIconClass(darkIcon) : setIconClass(lightIcon);
-  }, [search])
+    if (localStorage.getItem("mode") === "dark") {
+      document.body.classList.add('dark');
+      localStorage.setItem('mode', 'dark');
+    }
+  }, []);
 
   function handleSearch(e) {
-    // Todo:
     e.preventDefault();
     if (search === null || search === "") {
       window.location.href = `/search`;
@@ -30,14 +31,14 @@ export default function Header() {
   }
 
   function handleMode() {
-    if (getLocalStorage("mode") === "dark") {
-      // Todo:
-      setLocalStorage("mode", "light")
+    if (localStorage.getItem("mode") === "dark") {
+      localStorage.setItem("mode", "light");
       document.getElementById("toggle").classList.toggle(lightIcon);
     } else {
-      setLocalStorage("mode", "dark")
+      localStorage.setItem("mode", "dark")
       document.getElementById("toggle").classList.toggle(darkIcon);
     }
+    document.body.classList.toggle('dark');
   }
 
   return (

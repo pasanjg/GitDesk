@@ -1,10 +1,9 @@
-@import "../../assets/scss/color.scss";
+@import "../../assets/scss/variables.scss";
 
 #error-content {
   display: grid;
   height: 100vh;
   place-items: center;
-  background-color: $default-black-dark;
 
   .content {
     display: flex;

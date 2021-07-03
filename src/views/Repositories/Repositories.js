@@ -32,7 +32,9 @@ const Repositories = () => {
   );
 
   if (loading)
-    return <Loader />;
+    return <div className="loading">
+      <Loader />
+    </div>;
   else if (error)
     return <ErrorPage error={error} />;
   else {
@@ -60,7 +62,7 @@ const Repositories = () => {
             repositories.nodes.map((repo, index) => {
               return (
                 <div key={index} className="col-md-6">
-                  <div className="repo-card">
+                  <div className="card repo-card">
                     <div className="details">
                       <h5 className="title">{repo.name}</h5>
                       {repo.isPrivate ? <i className="fa fa-lock"></i> : <i></i>}

@@ -2,8 +2,10 @@ import React, { Component } from 'react';
 import queryString from 'query-string';
 import axios from 'axios';
 import { setLocalStorage, getGitHubOAuthURL, getLocalStorage } from '../../utils/Util.js';
-import githubLogo from '../../assets/images/githubLogo.svg';
-import octocatSpinner from '../../assets/images/octocat-spinner.gif';
+import Loader from "../../components/loader/loader.js";
+
+import githubLogoBlack from '../../assets/images/githubLogoBlack.svg';
+import githubLogoWhite from '../../assets/images/githubLogoWhite.svg';
 import './OAuth.scss';
 
 export class OAuth extends Component {
@@ -11,10 +13,21 @@ export class OAuth extends Component {
   constructor(props) {
     super(props);
 
+    this.state = {
+      ghIcon: githubLogoWhite,
+    };
+
     this.getTokenDev.bind(this);
   }
 
   async componentDidMount() {
+    if (localStorage.getItem("mode") === "dark") {
+      document.body.classList.toggle('dark');
+      this.setState({ ghIcon: githubLogoWhite });
+    } else {
+      this.setState({ ghIcon: githubLogoBlack });
+    }
+
     await this.getTokenDev();
   }
 
@@ -55,10 +68,12 @@ export class OAuth extends Component {
   render() {
     return (
       <div className="login-content">
-        <div className="main">
-          <img src={githubLogo} alt="logo" width="150" />
-          <img src={octocatSpinner} alt="octocat" width="60" />
-          <code className="text-center">Hold on!<br />We're resolving your promise.</code>
+        <div className="card main">
+          <img src={this.state.ghIcon} className="mt-5" alt="logo" width="150" />
+          <div className="loading">
+            <Loader />
+          </div>
+          <code className="text-center mb-4">Hold on!<br />We're resolving the promise.</code>
         </div>
       </div>
     )

@@ -1,10 +1,10 @@
-@import "../../assets/scss/color.scss";
+@import "../../assets/scss/variables.scss";
 
 .login-content {
   display: grid;
   height: 100vh;
   place-items: center;
-  background-color: $default-black-dark;
+  background-color: var(--color-default-background);
 
   &::before {
     content: "";
@@ -15,8 +15,8 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    filter: blur(50px);
-    filter: opacity(0.6);
+    filter: blur(40px);
+    filter: opacity(1);
   }
 
   .main {
@@ -26,14 +26,10 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-    border: 1px solid $default-black;
-    border-radius: 10px;
-    background-color: $default-black;
-    transition: all 0.2s;
     filter: blur(0) !important;
 
     &:hover {
-      background-color: $default-black-light;
+      background-color: var(--color-card-background);
     }
 
     code {
@@ -44,11 +40,10 @@
 
     .login-btn {
       color: $white;
-      background-color: $default-dark-green;
-      transition: all 0.2s;
+      background-color: $light-green;
 
       &:hover {
-        background-color: $default-light-green;
+        background-color: $dark-green;
       }
     }
   }

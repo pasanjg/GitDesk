@@ -1,9 +1,10 @@
-@import "../../assets/scss/color.scss";
+@import "../../assets/scss/variables.scss";
 
 .main-content {
-  background-color: $default-black-dark !important;
+  height: 100vh;
   margin-left: 210px;
   padding-top: 70px;
+  background-color: var(--color-default-background);
 }
 
 @media screen and (max-width: 1200px) {
