@@ -6,9 +6,12 @@
   "author": {
     "name": "Pasan Godamune"
   },
+  "engines": {
+    "node": ">=20.0.0"
+  },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "NODE_OPTIONS=--openssl-legacy-provider react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -54,7 +57,6 @@
     "html-react-parser": "^0.14.0",
     "jquery": "^3.5.1",
     "moment": "^2.29.0",
-    "node-sass": "^4.14.1",
     "popper.js": "^1.16.1",
     "query-string": "^6.13.6",
     "react": "^16.13.1",
@@ -66,6 +68,7 @@
     "react-scripts": "^4.0.3",
     "react-spinners": "^0.9.0",
     "react-tooltip": "^4.2.10",
+    "sass": "^1.77.8",
     "use-debounce": "^5.0.1"
   }
 }
